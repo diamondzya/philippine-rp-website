@@ -746,6 +746,21 @@
     </div>
   </footer>
 
+<script>
+document.addEventListener("contextmenu", e => e.preventDefault());
+
+document.addEventListener("keydown", e => {
+    if (
+        e.key === "F12" ||
+        (e.ctrlKey && e.key.toLowerCase() === "u") ||
+        (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(e.key.toLowerCase()))
+    ) {
+        e.preventDefault();
+        return false;
+    }
+});
+</script>
+
   <script>
     // =========================
     // PHLRP WEBSITE SETTINGS
