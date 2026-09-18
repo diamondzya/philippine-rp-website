@@ -378,6 +378,7 @@
         <a class="nav-link active" href="#home">Home</a>
         <a class="nav-link" href="#features">Features</a>
         <a class="nav-link" href="#updates">Updates</a>
+        <a class="nav-link" href="#community">Community</a>
         <a class="nav-link" href="#anticheat">Anti-Cheat</a>
         <a class="nav-link" href="#rules">Rules</a>
         <a class="nav-link" href="#support">Support</a>
@@ -404,6 +405,7 @@
         <a class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold text-slate-300 hover:bg-white/5 hover:text-white" href="#home">Home</a>
         <a class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold text-slate-300 hover:bg-white/5 hover:text-white" href="#features">Features</a>
         <a class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold text-slate-300 hover:bg-white/5 hover:text-white" href="#updates">Updates</a>
+        <a class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold text-slate-300 hover:bg-white/5 hover:text-white" href="#community">Community</a>
         <a class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold text-slate-300 hover:bg-white/5 hover:text-white" href="#anticheat">Anti-Cheat</a>
         <a class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold text-slate-300 hover:bg-white/5 hover:text-white" href="#rules">Rules</a>
         <a class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold text-slate-300 hover:bg-white/5 hover:text-white" href="#support">Support</a>
@@ -597,6 +599,114 @@
       </div>
     </section>
 
+
+    <section id="community" class="border-y border-white/5 bg-white/[.015] py-24 md:py-32">
+      <div class="container-shell">
+        <div class="reveal max-w-3xl">
+          <div class="section-kicker">Live Community</div>
+          <h2 class="section-title">See who's around before you join.</h2>
+          <p class="section-copy mt-5">
+            Check the PHLRP Discord community in real time, see members currently online, and jump straight into the conversation.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-6 lg:grid-cols-[.9fr_1.1fr]">
+          <div class="glass reveal rounded-3xl p-6 md:p-8">
+            <div class="flex flex-wrap items-center justify-between gap-4">
+              <div class="flex items-center gap-4">
+                <div class="grid h-14 w-14 place-items-center rounded-2xl border border-[#5865F2]/30 bg-[#5865F2]/15 text-2xl text-[#9aa4ff]">
+                  <i class="fa-brands fa-discord"></i>
+                </div>
+                <div>
+                  <div id="discord-server-name" class="text-xl font-extrabold text-white">PHLRP Community</div>
+                  <div class="mt-1 flex items-center gap-2 text-sm text-slate-500">
+                    <span id="discord-live-dot" class="status-dot"></span>
+                    <span id="discord-widget-status">Connecting to Discord...</span>
+                  </div>
+                </div>
+              </div>
+
+              <a id="discord-join-community"
+                 href="https://dsc.gg/philippine-roleplay"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="btn btn-primary !min-h-[44px] !px-4 !py-2">
+                <i class="fa-brands fa-discord"></i>
+                Join Discord
+              </a>
+            </div>
+
+            <div class="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-3">
+              <div class="rounded-2xl border border-white/7 bg-black/20 p-4">
+                <div class="text-[10px] font-bold uppercase tracking-[.16em] text-slate-500">Online Now</div>
+                <div id="discord-online-count" class="display-font mt-1 text-3xl font-bold text-sky-300">--</div>
+              </div>
+              <div class="rounded-2xl border border-white/7 bg-black/20 p-4">
+                <div class="text-[10px] font-bold uppercase tracking-[.16em] text-slate-500">Members</div>
+                <div id="discord-member-count" class="display-font mt-1 text-3xl font-bold text-white">--</div>
+              </div>
+              <div class="col-span-2 rounded-2xl border border-white/7 bg-black/20 p-4 sm:col-span-1">
+                <div class="text-[10px] font-bold uppercase tracking-[.16em] text-slate-500">Voice Channels</div>
+                <div id="discord-voice-count" class="display-font mt-1 text-3xl font-bold text-white">--</div>
+              </div>
+            </div>
+
+            <div class="mt-7 flex items-center justify-between gap-4 border-b border-white/7 pb-3">
+              <div>
+                <div class="text-xs font-extrabold uppercase tracking-[.16em] text-slate-300">Online Members</div>
+                <div class="mt-1 text-xs text-slate-600">Public Discord widget presence</div>
+              </div>
+              <button id="discord-refresh" type="button" class="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs font-bold text-slate-300 transition hover:border-sky-400/30 hover:text-white">
+                <i class="fa-solid fa-rotate-right mr-1"></i> Refresh
+              </button>
+            </div>
+
+            <div id="discord-members" class="mt-4 grid gap-3 sm:grid-cols-2">
+              <div class="col-span-full rounded-2xl border border-dashed border-white/10 bg-white/[.02] p-5 text-sm leading-6 text-slate-500">
+                Loading Discord presence...
+              </div>
+            </div>
+
+            <div id="discord-overflow" class="mt-4 hidden text-center text-xs font-semibold text-slate-500"></div>
+          </div>
+
+          <div class="glass reveal overflow-hidden rounded-3xl">
+            <div class="flex items-center justify-between border-b border-white/7 px-5 py-4">
+              <div>
+                <div class="text-sm font-extrabold text-white">PHLRP Discord</div>
+                <div class="mt-1 text-xs text-slate-500">Official Discord server widget</div>
+              </div>
+              <span class="tag">Live</span>
+            </div>
+
+            <div id="discord-widget-frame-wrap" class="hidden bg-[#1e1f22]">
+              <iframe
+                id="discord-widget-frame"
+                title="PHLRP Discord"
+                width="100%"
+                height="500"
+                frameborder="0"
+                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+                loading="lazy"
+                class="block w-full bg-[#1e1f22]"></iframe>
+            </div>
+
+            <div id="discord-widget-setup" class="grid min-h-[500px] place-items-center p-8 text-center">
+              <div class="max-w-md">
+                <div class="mx-auto grid h-16 w-16 place-items-center rounded-2xl border border-[#5865F2]/25 bg-[#5865F2]/10 text-2xl text-[#9aa4ff]">
+                  <i class="fa-brands fa-discord"></i>
+                </div>
+                <h3 class="mt-5 text-xl font-extrabold text-white">Connect the Discord widget</h3>
+                <p class="mt-3 text-sm leading-7 text-slate-500">
+                  Enable the Server Widget in Discord, then paste your Discord Server ID into <code class="rounded bg-black/30 px-1.5 py-1 text-sky-300">CONFIG.DISCORD_GUILD_ID</code>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="anticheat" class="py-24 md:py-32">
       <div class="container-shell grid gap-10 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
         <div class="reveal">
@@ -735,6 +845,7 @@
       <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-slate-500">
         <a href="#features" class="hover:text-white">Features</a>
         <a href="#updates" class="hover:text-white">Updates</a>
+        <a href="#community" class="hover:text-white">Community</a>
         <a href="#anticheat" class="hover:text-white">Anti-Cheat</a>
         <a href="#rules" class="hover:text-white">Rules</a>
         <a href="#support" class="hover:text-white">Support</a>
@@ -774,6 +885,17 @@ document.addEventListener("keydown", e => {
       // { "online": true, "players": 18, "maxPlayers": 100 }
       // Do NOT use the SA-MP UDP query port directly in browser fetch().
       STATUS_API: 'https://phlrp-status-api.vercel.app/api/status',
+
+      // Discord live widget.
+      // 1) Discord > Server Settings > Widget > Enable Server Widget
+      // 2) Right-click your server icon > Copy Server ID (Developer Mode must be enabled)
+      // 3) Paste the ID below. No bot token is needed.
+      DISCORD_GUILD_ID: '1108753503830167632',
+      DISCORD_INVITE_URL: 'https://dsc.gg/philippine-roleplay',
+      // Optional: paste a normal discord.gg invite CODE only (example: AbCd1234)
+      // to show the approximate total member count.
+      DISCORD_INVITE_CODE: 'AQKpUJryCZ',
+      DISCORD_REFRESH_MS: 60000,
 
       // Replace with your official Windows client URL (GitHub Release, CDN, etc.).
       CLIENT_DOWNLOAD_URL: 'https://raw.githubusercontent.com/diamondzya/philippine-rp-website/main/PHLRP%20Client%20v2.7.3.zip',
@@ -825,6 +947,167 @@ document.addEventListener("keydown", e => {
       mobileBtn.setAttribute('aria-expanded', 'false');
       mobileBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
     }));
+
+    // Discord live community
+    const discordEls = {
+      serverName: document.getElementById('discord-server-name'),
+      status: document.getElementById('discord-widget-status'),
+      dot: document.getElementById('discord-live-dot'),
+      online: document.getElementById('discord-online-count'),
+      membersTotal: document.getElementById('discord-member-count'),
+      voice: document.getElementById('discord-voice-count'),
+      members: document.getElementById('discord-members'),
+      overflow: document.getElementById('discord-overflow'),
+      frame: document.getElementById('discord-widget-frame'),
+      frameWrap: document.getElementById('discord-widget-frame-wrap'),
+      setup: document.getElementById('discord-widget-setup'),
+      refresh: document.getElementById('discord-refresh'),
+      join: document.getElementById('discord-join-community'),
+    };
+
+    function setDiscordConnectionState(ok, text) {
+      if (!discordEls.dot) return;
+      discordEls.dot.classList.remove('online', 'offline');
+      if (ok === true) discordEls.dot.classList.add('online');
+      if (ok === false) discordEls.dot.classList.add('offline');
+      discordEls.status.textContent = text;
+    }
+
+    function renderDiscordMembers(members = []) {
+      discordEls.members.innerHTML = '';
+      const visible = members.slice(0, 10);
+
+      if (!visible.length) {
+        discordEls.members.innerHTML = `
+          <div class="col-span-full rounded-2xl border border-dashed border-white/10 bg-white/[.02] p-5 text-sm leading-6 text-slate-500">
+            No public online members are being returned by the Discord widget right now.
+          </div>`;
+        discordEls.overflow.classList.add('hidden');
+        return;
+      }
+
+      visible.forEach(member => {
+        const card = document.createElement('div');
+        card.className = 'flex min-w-0 items-center gap-3 rounded-2xl border border-white/7 bg-white/[.025] p-3';
+
+        const avatar = document.createElement('img');
+        avatar.src = member.avatar_url || 'https://cdn.discordapp.com/embed/avatars/0.png';
+        avatar.alt = '';
+        avatar.loading = 'lazy';
+        avatar.referrerPolicy = 'no-referrer';
+        avatar.className = 'h-10 w-10 shrink-0 rounded-full bg-white/5 object-cover';
+
+        const info = document.createElement('div');
+        info.className = 'min-w-0 flex-1';
+
+        const name = document.createElement('div');
+        name.className = 'truncate text-sm font-bold text-slate-200';
+        name.textContent = member.username || 'Discord Member';
+
+        const activity = document.createElement('div');
+        activity.className = 'mt-1 truncate text-xs text-slate-500';
+        activity.textContent = member.game?.name ? `Playing ${member.game.name}` : 'Online';
+
+        const presence = document.createElement('span');
+        presence.className = 'h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,.55)]';
+        presence.title = member.status || 'online';
+
+        info.append(name, activity);
+        card.append(avatar, info, presence);
+        discordEls.members.appendChild(card);
+      });
+
+      const remaining = Math.max(0, members.length - visible.length);
+      if (remaining) {
+        discordEls.overflow.textContent = `+${remaining} more online member${remaining === 1 ? '' : 's'} shown in the Discord widget`;
+        discordEls.overflow.classList.remove('hidden');
+      } else {
+        discordEls.overflow.classList.add('hidden');
+      }
+    }
+
+    async function loadDiscordInviteCount() {
+      if (!CONFIG.DISCORD_INVITE_CODE) {
+        discordEls.membersTotal.textContent = '--';
+        return;
+      }
+
+      try {
+        const response = await fetch(`https://discord.com/api/v10/invites/${encodeURIComponent(CONFIG.DISCORD_INVITE_CODE)}?with_counts=true`, {
+          cache: 'no-store'
+        });
+        if (!response.ok) throw new Error(`Invite API ${response.status}`);
+        const data = await response.json();
+        discordEls.membersTotal.textContent =
+          Number.isFinite(data.approximate_member_count) ? data.approximate_member_count.toLocaleString() : '--';
+      } catch (error) {
+        console.warn('[Discord] Could not load total member count:', error);
+        discordEls.membersTotal.textContent = '--';
+      }
+    }
+
+    async function loadDiscordWidget() {
+      if (!discordEls.members) return;
+
+      discordEls.join.href = CONFIG.DISCORD_INVITE_URL || 'https://discord.com/';
+      const guildId = String(CONFIG.DISCORD_GUILD_ID || '').trim();
+
+      if (!guildId) {
+        setDiscordConnectionState(null, 'Discord widget not configured');
+        discordEls.online.textContent = '--';
+        discordEls.voice.textContent = '--';
+        discordEls.membersTotal.textContent = '--';
+        discordEls.frameWrap.classList.add('hidden');
+        discordEls.setup.classList.remove('hidden');
+        discordEls.members.innerHTML = `
+          <div class="col-span-full rounded-2xl border border-dashed border-sky-400/15 bg-sky-400/[.03] p-5 text-sm leading-6 text-slate-500">
+            Add your Discord Server ID to <span class="font-semibold text-sky-300">CONFIG.DISCORD_GUILD_ID</span> to display live online members.
+          </div>`;
+        return;
+      }
+
+      discordEls.frame.src = `https://discord.com/widget?id=${encodeURIComponent(guildId)}&theme=dark`;
+      discordEls.frameWrap.classList.remove('hidden');
+      discordEls.setup.classList.add('hidden');
+
+      setDiscordConnectionState(null, 'Refreshing Discord...');
+      try {
+        const response = await fetch(`https://discord.com/api/guilds/${encodeURIComponent(guildId)}/widget.json`, {
+          cache: 'no-store'
+        });
+        if (!response.ok) throw new Error(`Discord widget API ${response.status}`);
+        const data = await response.json();
+
+        discordEls.serverName.textContent = data.name || 'PHLRP Community';
+        discordEls.online.textContent = Number(data.presence_count ?? data.members?.length ?? 0).toLocaleString();
+        discordEls.voice.textContent = Array.isArray(data.channels) ? data.channels.length.toLocaleString() : '0';
+        if (data.instant_invite && !CONFIG.DISCORD_INVITE_URL) {
+          discordEls.join.href = data.instant_invite;
+        }
+
+        renderDiscordMembers(Array.isArray(data.members) ? data.members : []);
+        setDiscordConnectionState(true, 'Discord is live');
+      } catch (error) {
+        console.warn('[Discord] Widget API unavailable:', error);
+        setDiscordConnectionState(false, 'Widget data unavailable');
+        discordEls.online.textContent = '--';
+        discordEls.voice.textContent = '--';
+        discordEls.members.innerHTML = `
+          <div class="col-span-full rounded-2xl border border-red-400/10 bg-red-400/[.025] p-5 text-sm leading-6 text-slate-500">
+            Discord did not return public widget data. Make sure <span class="font-semibold text-slate-300">Server Settings → Widget → Enable Server Widget</span> is turned on and the Server ID is correct.
+          </div>`;
+      }
+
+      await loadDiscordInviteCount();
+    }
+
+    discordEls.refresh?.addEventListener('click', () => {
+      loadDiscordWidget();
+      showToast('Refreshing Discord community data...');
+    });
+
+    loadDiscordWidget();
+    setInterval(loadDiscordWidget, CONFIG.DISCORD_REFRESH_MS);
 
     // Anti-cheat download
     document.getElementById('download-client').addEventListener('click', () => {
