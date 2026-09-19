@@ -1,139 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#050816" />
-  <meta name="description" content="Philippine Life Roleplay — a Philippine open.mp / SA-MP roleplay community with frequent updates, fair gameplay, custom systems, and PHLRP Anti-Cheat protection." />
-  <meta property="og:title" content="Philippine Roleplay" />
-  <meta property="og:description" content="Same city. Bigger stories. Join a roleplay server built around frequent updates, fair gameplay, and long-term community growth." />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#040714" />
   <title>Philippine Life Roleplay | Same City. Bigger Stories.</title>
+  
+  <meta name="title" content="Philippine Life Roleplay | Same City. Bigger Stories." />
+  <meta name="description" content="Philippine Life Roleplay — a Philippine open.mp / SA-MP roleplay community with frequent updates, fair gameplay, custom systems, and PHLRP Anti-Cheat protection." />
+  <meta name="keywords" content="Philippine Roleplay, PHLRP, SA-MP Philippines, open.mp, GTA San Andreas Multiplayer, GTA RP Philippines" />
+  <meta name="author" content="Philippine Life Roleplay" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://samp.ph-rp.info" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://samp.ph-rp.info" />
+  <meta property="og:title" content="Philippine Life Roleplay | Same City. Bigger Stories." />
+  <meta property="og:description" content="Same city. Bigger stories. Join a roleplay server built around frequent updates, fair gameplay, and long-term community growth." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&h=630&q=85" />
+  <meta property="og:locale" content="en_PH" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Philippine Life Roleplay | Same City. Bigger Stories." />
+  <meta name="twitter:description" content="Same city. Bigger stories. Join an active Philippine open.mp / SA-MP roleplay community." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1200&h=630&q=85" />
+
+  <!-- Structured Data / JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Philippine Life Roleplay",
+    "alternateName": "PHLRP",
+    "description": "A high-fidelity Philippine roleplay server powered by open.mp and SA-MP.",
+    "genre": ["Role-playing", "Multiplayer", "Action"],
+    "gamePlatform": "PC",
+    "operatingSystem": "Windows",
+    "url": "https://samp.ph-rp.info"
+  }
+  </script>
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Identity Services SDK -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Rajdhani:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet" />
 
   <style>
     :root {
-      --bg: #050816;
-      --bg-soft: #0a1021;
-      --panel: rgba(10, 16, 33, 0.74);
-      --panel-strong: rgba(8, 13, 27, 0.92);
-      --line: rgba(148, 163, 184, 0.16);
-      --muted: #94a3b8;
-      --text: #e5edf8;
+      --bg: #030612;
+      --bg-card: rgba(10, 16, 32, 0.72);
+      --bg-card-hover: rgba(14, 23, 44, 0.85);
+      --line: rgba(255, 255, 255, 0.08);
+      --line-bright: rgba(255, 255, 255, 0.16);
+      --text: #f0f4fc;
+      --muted: #8493a8;
       --blue: #20a4ff;
-      --blue-2: #1d6dff;
-      --red: #ff3148;
-      --green: #30d58a;
-      --amber: #ffbc42;
-      --shadow-blue: 0 0 44px rgba(32, 164, 255, 0.18);
-      --shadow-red: 0 0 44px rgba(255, 49, 72, 0.14);
+      --blue-subtle: rgba(32, 164, 255, 0.12);
+      --blue-glow: rgba(32, 164, 255, 0.4);
+      --blue-deep: #1260ee;
+      --red: #ff334b;
+      --green: #2cd07e;
+      --amber: #ffb834;
+      --radius-panel: 16px;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { 
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
     body {
       margin: 0;
       min-height: 100vh;
       overflow-x: hidden;
       color: var(--text);
-      background:
-        radial-gradient(circle at 15% 15%, rgba(32,164,255,.10), transparent 28%),
-        radial-gradient(circle at 85% 40%, rgba(255,49,72,.08), transparent 28%),
-        linear-gradient(180deg, #050816 0%, #060a14 40%, #03060d 100%);
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(32, 164, 255, 0.14), transparent 60%),
+        radial-gradient(circle at 90% 25%, rgba(255, 51, 75, 0.06), transparent 40%),
+        radial-gradient(circle at 10% 70%, rgba(32, 164, 255, 0.05), transparent 45%),
+        linear-gradient(180deg, #030612 0%, #050a1b 35%, #02050f 100%);
+      font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
+    /* Enterprise Studio Micro-Grid */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: .15;
+      opacity: .12;
       z-index: -1;
       background-image:
-        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
-      background-size: 46px 46px;
-      mask-image: linear-gradient(to bottom, #000 0%, transparent 76%);
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(ellipse 75% 65% at 50% 35%, #000 40%, transparent 85%);
     }
 
-    ::selection { background: rgba(32,164,255,.38); color: white; }
-    ::-webkit-scrollbar { width: 10px; }
-    ::-webkit-scrollbar-track { background: #050816; }
-    ::-webkit-scrollbar-thumb { background: #20304d; border-radius: 999px; }
-    ::-webkit-scrollbar-thumb:hover { background: #2d4772; }
+    /* Accessible Outline */
+    :focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 3px;
+    }
 
-    .display-font { font-family: Rajdhani, Inter, sans-serif; }
-    .container-shell { width: min(1180px, calc(100% - 32px)); margin-inline: auto; }
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1.5rem;
+      background: var(--blue-deep);
+      color: #fff;
+      padding: 0.6rem 1.25rem;
+      z-index: 1000;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      box-shadow: 0 10px 30px rgba(18, 96, 238, 0.4);
+      transition: top 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .skip-link:focus { top: 1.25rem; }
 
+    ::selection { background: rgba(32,164,255,.35); color: #ffffff; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #030612; }
+    ::-webkit-scrollbar-thumb { 
+      background: #19253d; 
+      border-radius: 999px; 
+      border: 2px solid #030612;
+    }
+    ::-webkit-scrollbar-thumb:hover { background: #283b5e; }
+
+    .display-font { font-family: Rajdhani, "Plus Jakarta Sans", sans-serif; }
+    .mono-font { font-family: "JetBrains Mono", monospace; }
+    .container-shell { width: min(1200px, calc(100% - 40px)); margin-inline: auto; }
+
+    /* Precision Corporate Glassmorphism */
     .glass {
-      background: linear-gradient(180deg, rgba(13,20,40,.82), rgba(7,12,25,.74));
+      background: var(--bg-card);
       border: 1px solid var(--line);
-      box-shadow: 0 20px 55px rgba(0,0,0,.24);
-      backdrop-filter: blur(14px);
+      box-shadow: 
+        0 1px 1px rgba(0, 0, 0, 0.08),
+        0 16px 40px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.09);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
     }
 
-    .glass-hover { transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+    .glass-hover { 
+      transition: transform .28s cubic-bezier(0.16, 1, 0.3, 1), 
+                  border-color .28s ease, 
+                  box-shadow .28s ease,
+                  background-color .28s ease; 
+    }
     .glass-hover:hover {
-      transform: translateY(-5px);
-      border-color: rgba(32,164,255,.35);
-      box-shadow: 0 24px 62px rgba(0,0,0,.34), var(--shadow-blue);
+      background: var(--bg-card-hover);
+      transform: translateY(-4px);
+      border-color: rgba(32, 164, 255, 0.38);
+      box-shadow: 
+        0 20px 48px rgba(0, 0, 0, 0.45),
+        0 0 32px rgba(32, 164, 255, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
     }
 
     .section-kicker {
       display: inline-flex;
       align-items: center;
-      gap: .55rem;
-      color: #73c9ff;
-      font-size: .76rem;
+      gap: .65rem;
+      color: #70c4ff;
+      font-size: .74rem;
       font-weight: 800;
-      letter-spacing: .18em;
+      letter-spacing: .22em;
       text-transform: uppercase;
+      font-family: "JetBrains Mono", monospace;
     }
 
     .section-kicker::before {
       content: "";
-      width: 28px;
+      width: 18px;
       height: 2px;
-      background: linear-gradient(90deg, var(--blue), transparent);
+      border-radius: 1px;
+      background: var(--blue);
+      box-shadow: 0 0 10px var(--blue);
     }
 
     .section-title {
-      margin-top: .7rem;
-      font-family: Rajdhani, Inter, sans-serif;
-      font-size: clamp(2.25rem, 5vw, 4.15rem);
-      line-height: .98;
+      margin-top: .65rem;
+      font-family: Rajdhani, "Plus Jakarta Sans", sans-serif;
+      font-size: clamp(2.3rem, 5vw, 3.8rem);
+      line-height: 1.02;
       font-weight: 700;
-      letter-spacing: -.035em;
-      color: #f7fbff;
+      letter-spacing: -.025em;
+      color: #ffffff;
+      text-shadow: 0 2px 20px rgba(0,0,0,.6);
     }
 
-    .section-copy { color: #9ba9bd; line-height: 1.8; max-width: 720px; }
+    .section-copy { 
+      color: #92a1b5; 
+      line-height: 1.8; 
+      max-width: 680px; 
+      font-size: 1rem;
+      font-weight: 400;
+    }
 
     .nav-link {
       position: relative;
-      color: #aab7ca;
-      font-size: .9rem;
+      color: #8c9cb2;
+      font-size: .88rem;
       font-weight: 600;
+      letter-spacing: .02em;
       transition: color .2s ease;
     }
-    .nav-link:hover, .nav-link.active { color: white; }
+    .nav-link:hover, .nav-link.active { color: #ffffff; }
     .nav-link::after {
       content: "";
       position: absolute;
       left: 0;
       right: 0;
-      bottom: -10px;
+      bottom: -6px;
       height: 2px;
+      border-radius: 999px;
       transform: scaleX(0);
-      background: linear-gradient(90deg, var(--blue), var(--red));
-      transition: transform .2s ease;
+      background: linear-gradient(90deg, var(--blue), #5eb8ff);
+      box-shadow: 0 0 10px rgba(32,164,255,.7);
+      transition: transform .22s cubic-bezier(0.16, 1, 0.3, 1);
       transform-origin: center;
     }
     .nav-link.active::after, .nav-link:hover::after { transform: scaleX(1); }
@@ -153,128 +250,237 @@
       inset: 0;
       z-index: -3;
       background-image:
-        linear-gradient(90deg, rgba(5,8,22,.94) 0%, rgba(5,8,22,.74) 45%, rgba(5,8,22,.60) 100%),
-        linear-gradient(180deg, rgba(5,8,22,.12) 0%, rgba(5,8,22,.90) 88%, #050816 100%),
+        linear-gradient(90deg, rgba(3,6,18,.97) 0%, rgba(3,6,18,.82) 48%, rgba(3,6,18,.62) 100%),
+        linear-gradient(180deg, rgba(3,6,18,.15) 0%, rgba(3,6,18,.94) 86%, #030612 100%),
         url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2000&q=85');
-      background-position: center;
+      background-position: center 38%;
       background-size: cover;
-      filter: saturate(.82) contrast(1.05);
+      filter: saturate(.82) contrast(1.1);
     }
 
+    /* Ambient Volumetric Stage Glow */
     .hero::after {
       content: "";
       position: absolute;
-      width: 440px;
-      height: 440px;
+      width: 580px;
+      height: 580px;
       border-radius: 50%;
-      right: -80px;
-      top: 120px;
+      right: -60px;
+      top: 80px;
       z-index: -2;
-      background: rgba(32,164,255,.16);
-      filter: blur(110px);
+      background: radial-gradient(circle, rgba(32, 164, 255, 0.22) 0%, rgba(18, 96, 238, 0.08) 50%, transparent 72%);
+      filter: blur(120px);
+      animation: ambientAura 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes ambientAura {
+      0% { transform: scale(0.92) translate(0, 0); opacity: 0.6; }
+      100% { transform: scale(1.15) translate(-20px, 30px); opacity: 0.95; }
     }
 
     .hero-title {
-      font-family: Rajdhani, Inter, sans-serif;
-      font-size: clamp(4rem, 10vw, 8.2rem);
-      line-height: .77;
-      font-weight: 700;
-      letter-spacing: -.055em;
+      font-family: Rajdhani, "Plus Jakarta Sans", sans-serif;
+      font-size: clamp(3.8rem, 9.5vw, 7.6rem);
+      line-height: .80;
+      font-weight: 800;
+      letter-spacing: -.04em;
       text-transform: uppercase;
     }
 
+    /* Professional Studio Grade Breathing Light - Main */
     .hero-title .main {
       display: block;
-      background: linear-gradient(180deg, #fff 0%, #dbeafe 45%, #75caff 100%);
+      background: linear-gradient(180deg, #ffffff 0%, #edf4fe 50%, #90d3ff 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      filter: drop-shadow(0 8px 28px rgba(32,164,255,.17));
+      animation: textBreatheMain 5s ease-in-out infinite alternate;
     }
 
+    @keyframes textBreatheMain {
+      0% {
+        filter: drop-shadow(0 4px 14px rgba(32, 164, 255, 0.16)) 
+                drop-shadow(0 0 20px rgba(255, 255, 255, 0.08));
+      }
+      50% {
+        filter: drop-shadow(0 6px 24px rgba(32, 164, 255, 0.42)) 
+                drop-shadow(0 0 45px rgba(144, 211, 255, 0.35));
+      }
+      100% {
+        filter: drop-shadow(0 10px 38px rgba(32, 164, 255, 0.72)) 
+                drop-shadow(0 0 70px rgba(32, 164, 255, 0.55))
+                drop-shadow(0 0 100px rgba(255, 255, 255, 0.32));
+      }
+    }
+
+    /* Professional Studio Grade Breathing Light - Accent */
     .hero-title .accent {
       display: block;
       margin-top: .08em;
-      background: linear-gradient(180deg, #4cc2ff 0%, #147cff 92%);
+      background: linear-gradient(180deg, #62dcff 0%, #20a4ff 42%, #0e6aff 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      text-shadow: 0 0 50px rgba(32,164,255,.10);
+      animation: textBreatheAccent 5s ease-in-out infinite alternate;
     }
 
+    @keyframes textBreatheAccent {
+      0% {
+        filter: drop-shadow(0 4px 16px rgba(18, 96, 238, 0.25)) 
+                drop-shadow(0 0 24px rgba(32, 164, 255, 0.15));
+        text-shadow: 0 0 24px rgba(32, 164, 255, 0.20);
+      }
+      50% {
+        filter: drop-shadow(0 8px 30px rgba(18, 96, 238, 0.50)) 
+                drop-shadow(0 0 55px rgba(32, 164, 255, 0.40));
+        text-shadow: 0 0 50px rgba(32, 164, 255, 0.50);
+      }
+      100% {
+        filter: drop-shadow(0 12px 45px rgba(18, 96, 238, 0.80)) 
+                drop-shadow(0 0 85px rgba(32, 164, 255, 0.70))
+                drop-shadow(0 0 120px rgba(98, 220, 255, 0.45));
+        text-shadow: 0 0 75px rgba(98, 220, 255, 0.75);
+      }
+    }
+
+    /* Refined Architectural Divider */
     .hero-line {
       width: min(260px, 45vw);
-      height: 3px;
-      margin: 1.5rem 0;
+      height: 2px;
+      margin: 1.6rem 0;
+      border-radius: 999px;
       background: linear-gradient(90deg, var(--red), var(--blue), transparent);
+      animation: lineBreathe 5s ease-in-out infinite alternate;
     }
 
+    @keyframes lineBreathe {
+      0% { box-shadow: 0 0 8px rgba(32,164,255,.25); opacity: 0.75; }
+      100% { box-shadow: 0 0 22px rgba(32,164,255,.8), 0 0 40px rgba(255,51,75,.4); opacity: 1; }
+    }
+
+    /* Enterprise Component Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: .65rem;
-      min-height: 50px;
-      padding: .82rem 1.22rem;
-      border-radius: 12px;
-      font-size: .9rem;
-      font-weight: 800;
+      min-height: 48px;
+      padding: .75rem 1.35rem;
+      border-radius: 11px;
+      font-size: .88rem;
+      font-weight: 700;
       letter-spacing: .01em;
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      overflow: hidden;
       transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
     }
     .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
+
+    .btn::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+      transform: rotate(25deg);
+      pointer-events: none;
+      transition: left 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn:hover::after { left: 140%; }
+    
     .btn-primary {
       color: white;
-      background: linear-gradient(135deg, #209cff, #1765ff);
-      box-shadow: 0 12px 34px rgba(29,109,255,.28);
+      background: linear-gradient(135deg, #249eff, #1059f0);
+      box-shadow: 0 8px 24px rgba(16, 89, 240, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.18);
     }
-    .btn-primary:hover { box-shadow: 0 16px 42px rgba(29,109,255,.38); }
+    .btn-primary:hover { 
+      box-shadow: 0 12px 32px rgba(16, 89, 240, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.35); 
+    }
+    
     .btn-secondary {
-      color: #edf7ff;
-      background: rgba(255,255,255,.055);
-      border: 1px solid rgba(255,255,255,.13);
-      backdrop-filter: blur(10px);
+      color: #e2edfb;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
     }
-    .btn-secondary:hover { border-color: rgba(32,164,255,.44); background: rgba(32,164,255,.09); }
-    .btn-danger {
-      color: white;
-      background: linear-gradient(135deg, #ff3148, #d51d3b);
-      box-shadow: 0 12px 34px rgba(255,49,72,.20);
+    .btn-secondary:hover { 
+      border-color: rgba(32, 164, 255, 0.4); 
+      background: rgba(32, 164, 255, 0.08); 
+      box-shadow: 0 8px 24px rgba(0,0,0,.25), 0 0 20px rgba(32,164,255,.12);
     }
 
+    /* Enterprise System Status Beacon */
     .status-dot {
-      width: 9px;
-      height: 9px;
+      position: relative;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: #64748b;
-      box-shadow: 0 0 0 5px rgba(100,116,139,.10);
+      box-shadow: 0 0 0 3px rgba(100,116,139,.18);
     }
-    .status-dot.online { background: var(--green); box-shadow: 0 0 0 5px rgba(48,213,138,.10), 0 0 18px rgba(48,213,138,.55); }
-    .status-dot.offline { background: var(--red); box-shadow: 0 0 0 5px rgba(255,49,72,.10), 0 0 18px rgba(255,49,72,.35); }
+    .status-dot.online { 
+      background: var(--green); 
+      box-shadow: 0 0 0 3px rgba(44, 208, 126, 0.2), 0 0 14px rgba(44, 208, 126, 0.8); 
+    }
+    .status-dot.online::after {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 1.5px solid var(--green);
+      animation: sonarPing 2.2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    }
+    .status-dot.offline { 
+      background: var(--red); 
+      box-shadow: 0 0 0 3px rgba(255, 51, 75, 0.2), 0 0 14px rgba(255, 51, 75, 0.7); 
+    }
 
+    @keyframes sonarPing {
+      0% { transform: scale(0.9); opacity: 0.9; }
+      100% { transform: scale(2.4); opacity: 0; }
+    }
+
+    /* Telemetry HUD Metric Box */
     .metric {
-      min-width: 118px;
-      padding: .9rem 1rem;
-      border-left: 1px solid rgba(148,163,184,.18);
+      min-width: 120px;
+      padding: 1.1rem 1.35rem;
+      border-left: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.015) 0%, transparent 100%);
     }
     .metric:first-child { border-left: 0; }
 
+    /* Studio Icon Box */
     .icon-box {
       width: 48px;
       height: 48px;
       display: grid;
       place-items: center;
       flex: 0 0 auto;
-      border: 1px solid rgba(32,164,255,.22);
-      border-radius: 13px;
-      color: #68c9ff;
-      background: linear-gradient(180deg, rgba(32,164,255,.14), rgba(32,164,255,.055));
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      color: #6bc8ff;
+      background: linear-gradient(180deg, rgba(32, 164, 255, 0.12), rgba(32, 164, 255, 0.03));
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 4px 12px rgba(0,0,0,.2);
+      transition: all .25s ease;
+    }
+    .glass-hover:hover .icon-box {
+      border-color: rgba(32, 164, 255, 0.5);
+      color: #ffffff;
+      transform: scale(1.04);
+      box-shadow: 0 0 20px rgba(32, 164, 255, 0.28);
     }
 
-    .feature-card { min-height: 245px; }
-    .feature-card p { color: #94a3b8; line-height: 1.7; }
+    .feature-card { min-height: 250px; }
+    .feature-card p { color: #8e9eaf; line-height: 1.7; font-size: .92rem; }
 
+    /* Release Changelog Border Glow */
     .update-card { overflow: hidden; position: relative; }
     .update-card::before {
       content: "";
@@ -282,99 +488,267 @@
       inset: 0 auto 0 0;
       width: 3px;
       background: linear-gradient(180deg, var(--blue), var(--red));
+      box-shadow: 0 0 14px rgba(32,164,255,.6);
     }
 
+    /* Precision Tag Badge */
     .tag {
       display: inline-flex;
       align-items: center;
-      padding: .34rem .58rem;
-      border-radius: 999px;
-      border: 1px solid rgba(32,164,255,.25);
-      background: rgba(32,164,255,.08);
-      color: #76cfff;
+      padding: .28rem .65rem;
+      border-radius: 6px;
+      border: 1px solid rgba(32, 164, 255, 0.24);
+      background: rgba(32, 164, 255, 0.08);
+      color: #82d0ff;
       font-size: .68rem;
-      font-weight: 800;
-      letter-spacing: .11em;
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 700;
+      letter-spacing: .08em;
       text-transform: uppercase;
     }
 
     .rule-number {
-      font-family: Rajdhani, Inter, sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: rgba(117,202,255,.45);
+      font-family: Rajdhani, "Plus Jakarta Sans", sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      line-height: 1;
+      background: linear-gradient(180deg, rgba(130, 208, 255, 0.85), rgba(130, 208, 255, 0.18));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
+    /* Enterprise Tier Cards */
     .donation-card.featured {
-      border-color: rgba(32,164,255,.48);
-      box-shadow: var(--shadow-blue);
+      border-color: rgba(32, 164, 255, 0.45);
+      background: linear-gradient(180deg, rgba(16, 26, 52, 0.88), rgba(8, 14, 30, 0.94));
+      box-shadow: 0 24px 60px rgba(0,0,0,.5), 0 0 45px rgba(32,164,255,.18);
+      transform: translateY(-4px);
     }
 
     .price {
-      font-family: Rajdhani, Inter, sans-serif;
-      font-size: 3.25rem;
-      font-weight: 700;
+      font-family: Rajdhani, "Plus Jakarta Sans", sans-serif;
+      font-size: 3.4rem;
+      font-weight: 800;
       line-height: 1;
       color: white;
+      text-shadow: 0 2px 20px rgba(32,164,255,.2);
     }
 
     .reveal {
       opacity: 0;
-      transform: translateY(22px);
-      transition: opacity .65s ease, transform .65s ease;
+      transform: translateY(20px);
+      transition: opacity .6s cubic-bezier(0.16, 1, 0.3, 1), transform .6s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
+    /* Corporate Notification Toast */
     .toast {
       position: fixed;
-      right: 20px;
-      bottom: 20px;
+      right: 24px;
+      bottom: 24px;
       z-index: 100;
-      max-width: min(360px, calc(100vw - 40px));
-      padding: .85rem 1rem;
+      max-width: min(390px, calc(100vw - 48px));
+      padding: .9rem 1.15rem;
       border-radius: 12px;
-      color: #dff4ff;
-      background: rgba(8,13,27,.96);
-      border: 1px solid rgba(32,164,255,.28);
-      box-shadow: 0 18px 45px rgba(0,0,0,.40);
+      color: #e5effc;
+      background: rgba(6, 11, 24, 0.96);
+      border: 1px solid rgba(32, 164, 255, 0.3);
+      box-shadow: 0 20px 50px rgba(0,0,0,.6), 0 0 25px rgba(32,164,255,.15);
+      backdrop-filter: blur(20px);
       opacity: 0;
-      transform: translateY(16px);
+      transform: translateY(16px) scale(0.97);
       pointer-events: none;
-      transition: .25s ease;
+      transition: opacity .25s cubic-bezier(0.16, 1, 0.3, 1), transform .25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
-    .toast.show { opacity: 1; transform: translateY(0); }
+    .toast.show { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+
+    /* Filter Tabs */
+    .filter-pill {
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+      color: #8c9cb2;
+      border-radius: 8px;
+      padding: .45rem .85rem;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+      transition: all 0.2s ease;
+    }
+    .filter-pill:hover {
+      background: rgba(32, 164, 255, 0.08);
+      border-color: rgba(32, 164, 255, 0.28);
+      color: #e5effc;
+    }
+    .filter-pill.active {
+      background: rgba(32, 164, 255, 0.16);
+      border-color: var(--blue);
+      color: #ffffff;
+      box-shadow: 0 0 16px rgba(32, 164, 255, 0.22);
+    }
+
+    /* Scroll To Top Button */
+    #back-to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 84px;
+      z-index: 90;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px) scale(0.92);
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s, border-color 0.2s, background 0.2s;
+    }
+    #back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+    #back-to-top:hover {
+      border-color: var(--blue);
+      box-shadow: 0 0 20px rgba(32,164,255,.3);
+    }
+
+    /* Clean Monospace Shortcut Badge */
+    .kbd-hint {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 20px;
+      height: 20px;
+      padding: 0 4px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      font-size: 10px;
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 700;
+      color: #b7dbff;
+      line-height: 1;
+    }
+
+    /* Corporate Auth Modal and Profile Elements */
+    .modal-backdrop {
+      background-color: rgba(2, 4, 12, 0.85);
+      backdrop-filter: blur(14px);
+    }
+    .profile-dropdown {
+      transform-origin: top right;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease, visibility 0.2s;
+    }
 
     @media (max-width: 767px) {
       .hero { min-height: 760px; padding-top: 76px; }
-      .metric { min-width: 0; border-left: 0; border-top: 1px solid rgba(148,163,184,.12); width: 100%; }
+      .metric { min-width: 0; border-left: 0; border-top: 1px solid var(--line); width: 100%; }
       .metric:first-child { border-top: 0; }
-      .hero-title { font-size: clamp(3.8rem, 22vw, 6rem); }
+      .hero-title { font-size: clamp(3.6rem, 21vw, 5.8rem); }
+      #back-to-top { bottom: 76px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+      *, *::before, *::after { 
+        transition-duration: .01ms !important; 
+        animation-duration: .01ms !important; 
+        animation-iteration-count: 1 !important; 
+      }
       .reveal { opacity: 1; transform: none; }
+      .status-dot.online::after { display: none; }
+      .hero-title .main, .hero-title .accent, .hero-line, .hero::after { animation: none !important; }
     }
   </style>
 </head>
 
 <body>
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <!-- Accessibility Skip Link -->
+  <a href="#home" class="skip-link">Skip to main content</a>
 
-  <nav id="navbar" class="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-[#050816]/75 backdrop-blur-xl">
+  <!-- Global Toast Notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <div class="grid h-7 w-7 shrink-0 place-items-center rounded-lg border border-sky-400/30 bg-sky-400/10 text-sky-300">
+      <i class="fa-solid fa-circle-info text-xs"></i>
+    </div>
+    <span id="toast-text" class="text-xs font-semibold tracking-wide"></span>
+  </div>
+
+  <!-- Back to Top Floating Button -->
+  <button id="back-to-top" class="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-[#070d1e]/90 text-sky-300 shadow-[0_12px_30px_rgba(0,0,0,.5)] backdrop-blur-xl hover:text-white" aria-label="Scroll back to top" type="button">
+    <i class="fa-solid fa-arrow-up text-sm"></i>
+  </button>
+
+  <!-- Google Authentication Modal -->
+  <div id="auth-modal" class="modal-backdrop fixed inset-0 z-[110] hidden items-center justify-center p-4">
+    <div class="glass relative w-full max-w-md overflow-hidden rounded-3xl border border-white/15 p-7 shadow-[0_25px_70px_rgba(0,0,0,.8)]">
+      <!-- Ambient Modal Glow -->
+      <div class="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-sky-500/20 blur-3xl"></div>
+      <div class="absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-blue-600/15 blur-3xl"></div>
+
+      <div class="relative z-10">
+        <div class="flex items-center justify-between border-b border-white/10 pb-4">
+          <div class="flex items-center gap-3">
+            <div class="grid h-9 w-9 place-items-center rounded-xl border border-sky-400/30 bg-sky-400/10 text-sky-300">
+              <span class="display-font text-base font-bold">PH</span>
+            </div>
+            <div>
+              <h2 class="display-font text-xl font-bold tracking-wider text-white">PHLRP Passport</h2>
+              <p class="mono-font text-[10px] uppercase tracking-wider text-slate-400">Citizen Authorization</p>
+            </div>
+          </div>
+          <button id="close-auth-modal" type="button" class="grid h-8 w-8 place-items-center rounded-lg border border-white/10 text-slate-400 transition hover:bg-white/5 hover:text-white" aria-label="Close modal">
+            <i class="fa-solid fa-xmark text-sm"></i>
+          </button>
+        </div>
+
+        <div class="my-6 text-center">
+          <div class="mx-auto mb-3 grid h-14 w-14 place-items-center rounded-2xl border border-white/10 bg-white/[.03] text-2xl shadow-inner">
+            <i class="fa-brands fa-google text-white"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white">Continue with your Google Account</h3>
+          <p class="mt-1 text-xs leading-relaxed text-slate-400">
+            Sign in or create your PHLRP citizen record automatically with your Gmail account.
+          </p>
+        </div>
+
+        <!-- Official Google Sign-In Container -->
+        <div class="flex flex-col items-center justify-center gap-3">
+          <div id="g_id_signin_container" class="flex justify-center"></div>
+
+          <!-- Direct Instant Simulation fallback for local testing -->
+          <button id="sim-google-login" type="button" class="btn btn-secondary w-full justify-center !min-h-[44px] text-xs">
+            <i class="fa-solid fa-bolt-lightning text-sky-400"></i>
+            <span>Quick Sign-In (Preview Mode)</span>
+          </button>
+        </div>
+
+        <div class="mt-6 rounded-xl border border-white/5 bg-black/30 p-3.5 text-center">
+          <div class="mono-font text-[10px] text-slate-400">
+            <i class="fa-solid fa-lock text-sky-400 mr-1"></i> Connected to Google Identity Services (OAuth 2.0). 
+          </div>
+          <div class="mt-1 text-[10px] text-slate-500">
+            Configure your client ID in <code class="mono-font text-sky-300">CONFIG.GOOGLE_CLIENT_ID</code>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Corporate Header / Studio Navigation -->
+  <nav id="navbar" class="fixed inset-x-0 top-0 z-50 border-b border-white/[.07] bg-[#030612]/80 backdrop-blur-2xl shadow-[0_4px_30px_rgba(0,0,0,.4)]">
     <div class="container-shell flex h-[72px] items-center justify-between">
-      <a href="#home" class="flex items-center gap-3" aria-label="PHLRP home">
-        <div class="grid h-10 w-10 place-items-center rounded-xl border border-sky-400/20 bg-sky-400/10 shadow-[0_0_24px_rgba(32,164,255,.10)]">
+      <a href="#home" class="group flex items-center gap-3.5" aria-label="PHLRP home">
+        <div class="grid h-10 w-10 place-items-center rounded-xl border border-sky-400/30 bg-gradient-to-br from-sky-400/15 to-blue-600/10 shadow-[0_0_20px_rgba(32,164,255,.15)] transition-transform duration-300 group-hover:scale-105">
           <span class="display-font text-lg font-bold tracking-tight text-sky-300">PH</span>
         </div>
         <div class="leading-tight">
-          <div class="display-font text-xl font-bold tracking-[.16em] text-white">PHILIPPINE</div>
-          <div class="text-[10px] font-bold uppercase tracking-[.24em] text-slate-500">Roleplay</div>
+          <div class="display-font text-xl font-bold tracking-[.18em] text-white transition-colors group-hover:text-sky-300">PHILIPPINE</div>
+          <div class="mono-font text-[9px] font-bold uppercase tracking-[.28em] text-slate-500">Roleplay • Studio</div>
         </div>
       </a>
 
-      <div class="hidden items-center gap-7 lg:flex">
+      <div class="hidden items-center gap-8 lg:flex" role="navigation" aria-label="Main Navigation">
         <a class="nav-link active" href="#home">Home</a>
         <a class="nav-link" href="#features">Features</a>
         <a class="nav-link" href="#updates">Updates</a>
@@ -384,88 +758,167 @@
         <a class="nav-link" href="#support">Support</a>
       </div>
 
-      <div class="hidden items-center gap-2 lg:flex">
-        <button id="nav-copy-ip" class="btn btn-secondary !min-h-[42px] !px-4 !py-2" type="button">
-          <i class="fa-solid fa-copy text-sky-300"></i>
+      <div class="hidden items-center gap-2.5 lg:flex">
+        <!-- Copy IP Button -->
+        <button id="nav-copy-ip" class="btn btn-secondary !min-h-[40px] !px-3 !py-1.5" type="button" title="Copy server address (Shortcut: C)">
+          <i class="fa-solid fa-copy text-sky-400"></i>
           <span>Copy IP</span>
+          <span class="kbd-hint">C</span>
         </button>
-        <a class="btn btn-primary !min-h-[42px] !px-4 !py-2" href="https://dsc.gg/philippine-roleplay" target="_blank" rel="noopener noreferrer">
-          <i class="fa-brands fa-discord"></i>
+
+        <!-- Discord Button -->
+        <a class="btn btn-secondary !min-h-[40px] !px-3 !py-1.5" href="https://dsc.gg/philippine-roleplay" target="_blank" rel="noopener noreferrer" aria-label="Join PHLRP Discord server">
+          <i class="fa-brands fa-discord text-[#7a8cff]"></i>
           <span>Discord</span>
         </a>
+
+        <!-- Dynamic Auth Button / Profile Menu Container -->
+        <div id="nav-auth-container" class="relative">
+          <button id="nav-login-btn" type="button" class="btn btn-primary !min-h-[40px] !px-4 !py-1.5">
+            <i class="fa-brands fa-google text-xs"></i>
+            <span>Sign In</span>
+          </button>
+
+          <!-- User Profile Dropdown Menu -->
+          <div id="user-menu" class="glass profile-dropdown absolute right-0 top-12 hidden w-72 rounded-2xl border border-white/15 p-4 shadow-[0_20px_50px_rgba(0,0,0,.6)]">
+            <div class="flex items-center gap-3 border-b border-white/10 pb-3">
+              <img id="user-avatar" src="" alt="User avatar" class="h-10 w-10 rounded-full border border-sky-400/40 object-cover" />
+              <div class="min-w-0 flex-1">
+                <div id="user-name" class="truncate text-sm font-bold text-white">--</div>
+                <div id="user-email" class="mono-font truncate text-[11px] text-slate-400">--</div>
+              </div>
+            </div>
+
+            <div class="mt-3 space-y-2">
+              <div class="rounded-xl border border-white/5 bg-black/30 p-2.5">
+                <div class="flex items-center justify-between text-[10px] font-bold text-slate-400">
+                  <span class="mono-font uppercase tracking-wider">Account ID</span>
+                  <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check mr-1"></i>Google Verified</span>
+                </div>
+                <div id="user-sub-id" class="mono-font mt-1 truncate text-xs text-sky-300">--</div>
+              </div>
+
+              <div class="rounded-xl border border-white/5 bg-black/30 p-2.5">
+                <label for="char-handle-input" class="mono-font block text-[10px] font-bold uppercase tracking-wider text-slate-400">RP Character Name</label>
+                <input id="char-handle-input" type="text" placeholder="e.g. Juan_DelaCruz" class="mt-1 w-full rounded-lg border border-white/10 bg-white/5 px-2.5 py-1.5 text-xs text-white placeholder-slate-500 focus:border-sky-400 focus:outline-none" />
+              </div>
+
+              <button id="nav-logout-btn" type="button" class="btn btn-secondary w-full justify-center !min-h-[38px] !text-xs text-red-300 hover:!border-red-500/40 hover:!text-red-200">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Sign Out</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <button id="mobile-menu-btn" class="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/5 text-white lg:hidden" aria-label="Open navigation" aria-expanded="false">
+      <button id="mobile-menu-btn" class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-white transition-colors hover:border-sky-400/30 hover:bg-sky-400/10 lg:hidden" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
         <i class="fa-solid fa-bars"></i>
       </button>
     </div>
 
-    <div id="mobile-menu" class="hidden border-t border-white/5 bg-[#060a14]/95 lg:hidden">
+    <div id="mobile-menu" class="hidden border-t border-white/5 bg-[#040816]/98 backdrop-blur-3xl lg:hidden">
       <div class="container-shell flex flex-col gap-1 py-4">
-        <a class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold text-slate-300 hover:bg-white/5 hover:text-white" href="#home">Home</a>
-        <a class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold text-slate-300 hover:bg-white/5 hover:text-white" href="#features">Features</a>
-        <a class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold text-slate-300 hover:bg-white/5 hover:text-white" href="#updates">Updates</a>
-        <a class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold text-slate-300 hover:bg-white/5 hover:text-white" href="#community">Community</a>
-        <a class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold text-slate-300 hover:bg-white/5 hover:text-white" href="#anticheat">Anti-Cheat</a>
-        <a class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold text-slate-300 hover:bg-white/5 hover:text-white" href="#rules">Rules</a>
-        <a class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold text-slate-300 hover:bg-white/5 hover:text-white" href="#support">Support</a>
-        <div class="mt-2 grid grid-cols-2 gap-2">
-          <button id="mobile-copy-ip" class="btn btn-secondary" type="button"><i class="fa-solid fa-copy"></i> Copy IP</button>
-          <a class="btn btn-primary" href="https://dsc.gg/philippine-roleplay" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-discord"></i> Discord</a>
+        <!-- Mobile User Status Badge -->
+        <div id="mobile-auth-status" class="mb-2 hidden rounded-xl border border-white/10 bg-white/[.02] p-3">
+          <div class="flex items-center gap-3">
+            <img id="mobile-user-avatar" src="" alt="Avatar" class="h-9 w-9 rounded-full object-cover border border-sky-400/30" />
+            <div class="min-w-0 flex-1">
+              <div id="mobile-user-name" class="truncate text-sm font-bold text-white">--</div>
+              <div id="mobile-user-email" class="mono-font truncate text-xs text-slate-400">--</div>
+            </div>
+          </div>
+          <button id="mobile-logout-btn" type="button" class="btn btn-secondary mt-3 w-full justify-center !min-h-[36px] text-xs text-red-300">
+            Sign Out
+          </button>
+        </div>
+
+        <a class="mobile-link rounded-xl px-3.5 py-3 text-sm font-semibold text-slate-300 transition-colors hover:bg-white/5 hover:text-white" href="#home">Home</a>
+        <a class="mobile-link rounded-xl px-3.5 py-3 text-sm font-semibold text-slate-300 transition-colors hover:bg-white/5 hover:text-white" href="#features">Features</a>
+        <a class="mobile-link rounded-xl px-3.5 py-3 text-sm font-semibold text-slate-300 transition-colors hover:bg-white/5 hover:text-white" href="#updates">Updates</a>
+        <a class="mobile-link rounded-xl px-3.5 py-3 text-sm font-semibold text-slate-300 transition-colors hover:bg-white/5 hover:text-white" href="#community">Community</a>
+        <a class="mobile-link rounded-xl px-3.5 py-3 text-sm font-semibold text-slate-300 transition-colors hover:bg-white/5 hover:text-white" href="#anticheat">Anti-Cheat</a>
+        <a class="mobile-link rounded-xl px-3.5 py-3 text-sm font-semibold text-slate-300 hover:bg-white/5 hover:text-white" href="#rules">Rules</a>
+        <a class="mobile-link rounded-xl px-3.5 py-3 text-sm font-semibold text-slate-300 hover:bg-white/5 hover:text-white" href="#support">Support</a>
+
+        <div class="mt-3 grid grid-cols-2 gap-2">
+          <button id="mobile-copy-ip" class="btn btn-secondary" type="button"><i class="fa-solid fa-copy text-sky-400"></i> <span>Copy IP</span></button>
+          <button id="mobile-login-btn" class="btn btn-primary" type="button"><i class="fa-brands fa-google"></i> <span>Sign In</span></button>
         </div>
       </div>
     </div>
   </nav>
 
   <main>
+    <!-- Hero Section -->
     <section id="home" class="hero">
-      <div class="container-shell relative z-10 pt-20">
+      <div class="container-shell relative z-10 pt-24 pb-16">
         <div class="max-w-4xl">
-          <div class="mb-5 inline-flex items-center gap-3 rounded-full border border-sky-400/20 bg-sky-400/10 px-4 py-2 text-xs font-bold uppercase tracking-[.16em] text-sky-200 backdrop-blur-lg">
+          <!-- Uptime Status Badge -->
+          <div class="mb-6 inline-flex items-center gap-3 rounded-full border border-sky-400/20 bg-sky-400/[.06] px-4 py-1.5 text-xs font-semibold tracking-wide text-sky-200 backdrop-blur-xl">
             <span id="hero-status-dot" class="status-dot"></span>
-            <span id="hero-status-label">Checking server status</span>
+            <span id="hero-status-label" class="mono-font uppercase tracking-widest text-[11px]">Checking server status</span>
           </div>
 
-          <p class="mb-4 text-xs font-black uppercase tracking-[.34em] text-slate-400 md:text-sm">People. Stories. Bond.</p>
+          <p class="mono-font mb-4 text-xs font-bold uppercase tracking-[.32em] text-slate-400 md:text-sm">People. Stories. Bond.</p>
+          
+          <!-- Primary Hero Heading with Breathing Light Animation -->
           <h1 class="hero-title">
             <span class="main">TEMPORARY ESCAPE.</span>
             <span class="accent">FROM REALITY.</span>
           </h1>
+          
           <div class="hero-line"></div>
-          <p class="max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
+          
+          <p class="max-w-2xl text-base leading-relaxed text-slate-300 md:text-lg">
             A Philippine roleplay community built for players who want consistent development, fair gameplay, custom systems, and a server that keeps moving forward.
           </p>
 
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a id="play-now" href="samp://samp.ph-rp.info:7777" class="btn btn-primary">
-              <i class="fa-solid fa-play"></i>
-              Play Now
+          <div class="mt-9 flex flex-wrap gap-3.5">
+            <a id="play-now" href="samp://samp.ph-rp.info:7777" class="btn btn-primary" title="Launch SA-MP (Shortcut: P)">
+              <i class="fa-solid fa-play text-xs"></i>
+              <span>Play Now</span>
+              <span class="kbd-hint">P</span>
             </a>
-            <button id="hero-copy-ip" class="btn btn-secondary" type="button">
-              <i class="fa-solid fa-copy text-sky-300"></i>
-              samp.ph-rp.info:7777
+            <button id="hero-copy-ip" class="btn btn-secondary" type="button" title="Copy server IP (Shortcut: C)">
+              <i class="fa-solid fa-copy text-sky-400"></i>
+              <span class="mono-font text-xs font-semibold">samp.ph-rp.info:7777</span>
+              <span class="kbd-hint">C</span>
             </button>
             <a href="https://dsc.gg/philippine-roleplay" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-              <i class="fa-brands fa-discord text-[#8d9cff]"></i>
-              Join the Community
+              <i class="fa-brands fa-discord text-[#7a8cff]"></i>
+              <span>Join the Community</span>
             </a>
           </div>
 
-          <div class="mt-10 flex max-w-3xl flex-col rounded-2xl border border-white/10 bg-black/20 backdrop-blur-xl md:flex-row">
-            <div class="metric">
-              <div class="text-[10px] font-bold uppercase tracking-[.16em] text-slate-500">Status</div>
+          <!-- Enterprise Telemetry HUD -->
+          <div class="mt-12 flex max-w-3xl flex-col rounded-2xl border border-white/10 bg-black/40 shadow-[0_24px_50px_rgba(0,0,0,.5)] backdrop-blur-2xl md:flex-row">
+            <div class="metric flex-1">
+              <div class="flex items-center justify-between">
+                <div class="mono-font text-[10px] font-bold uppercase tracking-[.18em] text-slate-400">Node Status</div>
+                <div class="h-1.5 w-1.5 rounded-full bg-sky-400/40"></div>
+              </div>
               <div id="hero-metric-status" class="mt-1 font-bold text-slate-200">Checking...</div>
             </div>
-            <div class="metric">
-              <div class="text-[10px] font-bold uppercase tracking-[.16em] text-slate-500">Players</div>
-              <div id="hero-metric-players" class="mt-1 font-bold text-slate-200">-- / --</div>
+            <div class="metric flex-1">
+              <div class="flex items-center justify-between">
+                <div class="mono-font text-[10px] font-bold uppercase tracking-[.18em] text-slate-400">Live Concurrency</div>
+                <div class="h-1.5 w-1.5 rounded-full bg-sky-400/40"></div>
+              </div>
+              <div id="hero-metric-players" class="mono-font mt-1 font-bold text-slate-200">-- / --</div>
             </div>
-            <div class="metric">
-              <div class="text-[10px] font-bold uppercase tracking-[.16em] text-slate-500">Platform</div>
+            <div class="metric flex-1">
+              <div class="flex items-center justify-between">
+                <div class="mono-font text-[10px] font-bold uppercase tracking-[.18em] text-slate-400">Architecture</div>
+                <div class="h-1.5 w-1.5 rounded-full bg-sky-400/40"></div>
+              </div>
               <div class="mt-1 font-bold text-slate-200">open.mp / SA-MP</div>
             </div>
-            <div class="metric">
-              <div class="text-[10px] font-bold uppercase tracking-[.16em] text-slate-500">Protection</div>
+            <div class="metric flex-1">
+              <div class="flex items-center justify-between">
+                <div class="mono-font text-[10px] font-bold uppercase tracking-[.18em] text-slate-400">Security</div>
+                <div class="h-1.5 w-1.5 rounded-full bg-sky-400/40"></div>
+              </div>
               <div class="mt-1 font-bold text-slate-200">PHLRP Client</div>
             </div>
           </div>
@@ -473,139 +926,151 @@
       </div>
     </section>
 
-    <section class="border-y border-white/5 bg-white/[.015] py-10">
+    <!-- Value Propositions -->
+    <section class="border-y border-white/[.07] bg-white/[.015] py-12">
       <div class="container-shell grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="flex items-center gap-4 rounded-2xl border border-white/5 bg-white/[.025] p-4">
+        <div class="flex items-center gap-4 rounded-xl border border-white/[.06] bg-white/[.02] p-4 transition hover:border-sky-400/30 hover:bg-white/[.04]">
           <div class="icon-box"><i class="fa-solid fa-calendar-check"></i></div>
-          <div><div class="font-bold text-white">Frequent Updates</div><div class="mt-1 text-xs text-slate-500">Daily fixes. Weekly improvements.</div></div>
+          <div><div class="font-bold text-white text-sm">Frequent Updates</div><div class="mt-0.5 text-xs text-slate-400">Daily fixes. Weekly improvements.</div></div>
         </div>
-        <div class="flex items-center gap-4 rounded-2xl border border-white/5 bg-white/[.025] p-4">
+        <div class="flex items-center gap-4 rounded-xl border border-white/[.06] bg-white/[.02] p-4 transition hover:border-sky-400/30 hover:bg-white/[.04]">
           <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
-          <div><div class="font-bold text-white">Fair Gameplay</div><div class="mt-1 text-xs text-slate-500">Protected by our anti-cheat system.</div></div>
+          <div><div class="font-bold text-white text-sm">Fair Gameplay</div><div class="mt-0.5 text-xs text-slate-400">Protected by our anti-cheat system.</div></div>
         </div>
-        <div class="flex items-center gap-4 rounded-2xl border border-white/5 bg-white/[.025] p-4">
+        <div class="flex items-center gap-4 rounded-xl border border-white/[.06] bg-white/[.02] p-4 transition hover:border-sky-400/30 hover:bg-white/[.04]">
           <div class="icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-          <div><div class="font-bold text-white">Active Development</div><div class="mt-1 text-xs text-slate-500">Systems are continuously refined.</div></div>
+          <div><div class="font-bold text-white text-sm">Active Development</div><div class="mt-0.5 text-xs text-slate-400">Systems are continuously refined.</div></div>
         </div>
-        <div class="flex items-center gap-4 rounded-2xl border border-white/5 bg-white/[.025] p-4">
+        <div class="flex items-center gap-4 rounded-xl border border-white/[.06] bg-white/[.02] p-4 transition hover:border-sky-400/30 hover:bg-white/[.04]">
           <div class="icon-box"><i class="fa-solid fa-users"></i></div>
-          <div><div class="font-bold text-white">Community First</div><div class="mt-1 text-xs text-slate-500">Built to grow with its players.</div></div>
+          <div><div class="font-bold text-white text-sm">Community First</div><div class="mt-0.5 text-xs text-slate-400">Built to grow with its players.</div></div>
         </div>
       </div>
     </section>
 
+    <!-- Features Section -->
     <section id="features" class="py-24 md:py-32">
       <div class="container-shell">
-        <div class="reveal max-w-3xl">
-          <div class="section-kicker">Server Experience</div>
-          <h2 class="section-title">Built for long-term roleplay.</h2>
-          <p class="section-copy mt-5">PHLRP focuses on systems that create progression, interaction, and reasons to keep coming back — without losing sight of stability and fair play.</p>
+        <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div class="reveal max-w-3xl">
+            <div class="section-kicker">Server Experience</div>
+            <h2 class="section-title">Built for long-term roleplay.</h2>
+            <p class="section-copy mt-4">PHLRP focuses on systems that create progression, interaction, and reasons to keep coming back — without losing sight of stability and fair play.</p>
+          </div>
+          <!-- Features Filter Pills -->
+          <div class="reveal flex flex-wrap gap-1.5 self-start rounded-xl border border-white/[.08] bg-black/30 p-1.5 backdrop-blur-xl lg:self-auto">
+            <button class="filter-pill active" data-filter="all" type="button">All Systems</button>
+            <button class="filter-pill" data-filter="economy" type="button">Economy & Jobs</button>
+            <button class="filter-pill" data-filter="security" type="button">Security</button>
+            <button class="filter-pill" data-filter="assets" type="button">Vehicles & Assets</button>
+          </div>
         </div>
 
-        <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          <article class="feature-card glass glass-hover reveal rounded-2xl p-7">
+        <div id="features-grid" class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <article class="feature-card glass glass-hover reveal rounded-2xl p-7" data-category="assets">
             <div class="icon-box"><i class="fa-solid fa-car-side"></i></div>
-            <h3 class="mt-6 text-xl font-extrabold text-white">Vehicle Ownership</h3>
-            <p class="mt-3">Purchase vehicles, manage ownership, and use the vehicle registration system before taking your new ride onto public roads.</p>
+            <h3 class="mt-6 text-xl font-bold text-white">Vehicle Ownership</h3>
+            <p class="mt-2.5">Purchase vehicles, manage ownership, and use the vehicle registration system before taking your new ride onto public roads.</p>
             <div class="mt-6 flex flex-wrap gap-2"><span class="tag">Registration</span><span class="tag">Plate System</span></div>
           </article>
 
-          <article class="feature-card glass glass-hover reveal rounded-2xl p-7">
+          <article class="feature-card glass glass-hover reveal rounded-2xl p-7" data-category="economy">
             <div class="icon-box"><i class="fa-solid fa-briefcase"></i></div>
-            <h3 class="mt-6 text-xl font-extrabold text-white">Jobs & Progression</h3>
-            <p class="mt-3">Earn through multiple jobs with ongoing salary balancing, reward improvements, fixes, and quality-of-life updates.</p>
+            <h3 class="mt-6 text-xl font-bold text-white">Jobs & Progression</h3>
+            <p class="mt-2.5">Earn through multiple jobs with ongoing salary balancing, reward improvements, fixes, and quality-of-life updates.</p>
             <div class="mt-6 flex flex-wrap gap-2"><span class="tag">Miner</span><span class="tag">Garbage</span><span class="tag">More</span></div>
           </article>
 
-          <article class="feature-card glass glass-hover reveal rounded-2xl p-7">
+          <article class="feature-card glass glass-hover reveal rounded-2xl p-7" data-category="security">
             <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
-            <h3 class="mt-6 text-xl font-extrabold text-white">Anti-Cheat Protection</h3>
-            <p class="mt-3">The PHLRP Anti-Cheat Client adds another layer of protection against unfair advantages while the team continues to improve stability.</p>
+            <h3 class="mt-6 text-xl font-bold text-white">Anti-Cheat Protection</h3>
+            <p class="mt-2.5">The PHLRP Anti-Cheat Client adds another layer of protection against unfair advantages while the team continues to improve stability.</p>
             <div class="mt-6 flex flex-wrap gap-2"><span class="tag">Verification</span><span class="tag">Fair Play</span></div>
           </article>
 
-          <article class="feature-card glass glass-hover reveal rounded-2xl p-7">
+          <article class="feature-card glass glass-hover reveal rounded-2xl p-7" data-category="economy">
             <div class="icon-box"><i class="fa-solid fa-building"></i></div>
-            <h3 class="mt-6 text-xl font-extrabold text-white">Businesses & Economy</h3>
-            <p class="mt-3">Build your character around jobs, businesses, vehicles, properties, and a growing in-game economy designed for progression.</p>
+            <h3 class="mt-6 text-xl font-bold text-white">Businesses & Economy</h3>
+            <p class="mt-2.5">Build your character around jobs, businesses, vehicles, properties, and a growing in-game economy designed for progression.</p>
             <div class="mt-6 flex flex-wrap gap-2"><span class="tag">Economy</span><span class="tag">Business</span></div>
           </article>
 
-          <article class="feature-card glass glass-hover reveal rounded-2xl p-7">
+          <article class="feature-card glass glass-hover reveal rounded-2xl p-7" data-category="assets">
             <div class="icon-box"><i class="fa-solid fa-house"></i></div>
-            <h3 class="mt-6 text-xl font-extrabold text-white">Properties & Storage</h3>
-            <p class="mt-3">Own properties, use storage systems, and build a persistent character with assets that matter throughout your roleplay journey.</p>
+            <h3 class="mt-6 text-xl font-bold text-white">Properties & Storage</h3>
+            <p class="mt-2.5">Own properties, use storage systems, and build a persistent character with assets that matter throughout your roleplay journey.</p>
             <div class="mt-6 flex flex-wrap gap-2"><span class="tag">Housing</span><span class="tag">Storage</span></div>
           </article>
 
-          <article class="feature-card glass glass-hover reveal rounded-2xl p-7">
+          <article class="feature-card glass glass-hover reveal rounded-2xl p-7" data-category="security">
             <div class="icon-box"><i class="fa-solid fa-arrows-rotate"></i></div>
-            <h3 class="mt-6 text-xl font-extrabold text-white">Continuous Improvement</h3>
-            <p class="mt-3">Bug fixes, balance adjustments, feature updates, and server optimizations are treated as an ongoing commitment — not a one-time launch.</p>
+            <h3 class="mt-6 text-xl font-bold text-white">Continuous Improvement</h3>
+            <p class="mt-2.5">Bug fixes, balance adjustments, feature updates, and server optimizations are treated as an ongoing commitment — not a one-time launch.</p>
             <div class="mt-6 flex flex-wrap gap-2"><span class="tag">Fixes</span><span class="tag">Updates</span><span class="tag">Optimization</span></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="updates" class="border-y border-white/5 bg-white/[.015] py-24 md:py-32">
+    <!-- Updates Section -->
+    <section id="updates" class="border-y border-white/[.07] bg-white/[.015] py-24 md:py-32">
       <div class="container-shell">
         <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div class="reveal max-w-3xl">
             <div class="section-kicker">Development Feed</div>
             <h2 class="section-title">Recent system updates.</h2>
-            <p class="section-copy mt-5">A quick look at the systems and improvements recently introduced to PHLRP.</p>
+            <p class="section-copy mt-4">A quick look at the systems and improvements recently introduced to PHLRP.</p>
           </div>
-          <a href="https://dsc.gg/philippine-roleplay" target="_blank" rel="noopener noreferrer" class="btn btn-secondary reveal self-start lg:self-auto"><i class="fa-brands fa-discord text-[#8d9cff]"></i> View Discord Announcements</a>
+          <a href="https://dsc.gg/philippine-roleplay" target="_blank" rel="noopener noreferrer" class="btn btn-secondary reveal self-start lg:self-auto"><i class="fa-brands fa-discord text-[#7a8cff]"></i> View Discord Announcements</a>
         </div>
 
         <div class="mt-12 grid gap-5 lg:grid-cols-2">
           <article class="update-card glass glass-hover reveal rounded-2xl p-7 pl-8">
             <div class="flex flex-wrap items-center justify-between gap-3">
               <span class="tag">System Update</span>
-              <span class="text-xs font-semibold text-slate-500">Vehicle System</span>
+              <span class="mono-font text-xs font-medium text-slate-400">Vehicle System</span>
             </div>
-            <h3 class="mt-5 text-2xl font-extrabold text-white">Vehicle Registration</h3>
-            <p class="mt-3 leading-7 text-slate-400">New dealership vehicles now begin with an <strong class="text-slate-200">UNREG</strong> plate. Players can register eligible vehicles near the Los Santos Police Department to receive a generated plate linked to the vehicle registration.</p>
+            <h3 class="mt-4 text-2xl font-bold text-white">Vehicle Registration</h3>
+            <p class="mt-2.5 leading-relaxed text-slate-300">New dealership vehicles now begin with an <strong class="text-white">UNREG</strong> plate. Players can register eligible vehicles near the Los Santos Police Department to receive a generated plate linked to the vehicle registration.</p>
           </article>
 
           <article class="update-card glass glass-hover reveal rounded-2xl p-7 pl-8">
             <div class="flex flex-wrap items-center justify-between gap-3">
               <span class="tag">Security</span>
-              <span class="text-xs font-semibold text-slate-500">Fair Gameplay</span>
+              <span class="mono-font text-xs font-medium text-slate-400">Fair Gameplay</span>
             </div>
-            <h3 class="mt-5 text-2xl font-extrabold text-white">Anti-Cheat Commitment</h3>
-            <p class="mt-3 leading-7 text-slate-400">Continued improvements to client verification, detection, stability, and review processes help protect legitimate players and preserve fair gameplay.</p>
+            <h3 class="mt-4 text-2xl font-bold text-white">Anti-Cheat Commitment</h3>
+            <p class="mt-2.5 leading-relaxed text-slate-300">Continued improvements to client verification, detection, stability, and review processes help protect legitimate players and preserve fair gameplay.</p>
           </article>
 
           <article class="update-card glass glass-hover reveal rounded-2xl p-7 pl-8">
             <div class="flex flex-wrap items-center justify-between gap-3">
               <span class="tag">Jobs</span>
-              <span class="text-xs font-semibold text-slate-500">Economy Balance</span>
+              <span class="mono-font text-xs font-medium text-slate-400">Economy Balance</span>
             </div>
-            <h3 class="mt-5 text-2xl font-extrabold text-white">Job System Improvements</h3>
-            <p class="mt-3 leading-7 text-slate-400">Mining rewards, Garbage Man payouts, and other job systems have received fixes, salary adjustments, reward updates, and animation improvements.</p>
+            <h3 class="mt-4 text-2xl font-bold text-white">Job System Improvements</h3>
+            <p class="mt-2.5 leading-relaxed text-slate-300">Mining rewards, Garbage Man payouts, and other job systems have received fixes, salary adjustments, reward updates, and animation improvements.</p>
           </article>
 
           <article class="update-card glass glass-hover reveal rounded-2xl p-7 pl-8">
             <div class="flex flex-wrap items-center justify-between gap-3">
               <span class="tag">Launch</span>
-              <span class="text-xs font-semibold text-slate-500">Community Growth</span>
+              <span class="mono-font text-xs font-medium text-slate-400">Community Growth</span>
             </div>
-            <h3 class="mt-5 text-2xl font-extrabold text-white">A New Chapter Begins</h3>
-            <p class="mt-3 leading-7 text-slate-400">PHLRP is being built around regular updates, fewer disruptive bugs, fair systems, and a community that can shape the server as it grows.</p>
+            <h3 class="mt-4 text-2xl font-bold text-white">A New Chapter Begins</h3>
+            <p class="mt-2.5 leading-relaxed text-slate-300">PHLRP is being built around regular updates, fewer disruptive bugs, fair systems, and a community that can shape the server as it grows.</p>
           </article>
         </div>
       </div>
     </section>
 
-
-    <section id="community" class="border-y border-white/5 bg-white/[.015] py-24 md:py-32">
+    <!-- Community Section -->
+    <section id="community" class="border-y border-white/[.07] bg-white/[.015] py-24 md:py-32">
       <div class="container-shell">
         <div class="reveal max-w-3xl">
           <div class="section-kicker">Live Community</div>
           <h2 class="section-title">See who's around before you join.</h2>
-          <p class="section-copy mt-5">
+          <p class="section-copy mt-4">
             Check the PHLRP Discord community in real time, see members currently online, and jump straight into the conversation.
           </p>
         </div>
@@ -614,14 +1079,14 @@
           <div class="glass reveal rounded-3xl p-6 md:p-8">
             <div class="flex flex-wrap items-center justify-between gap-4">
               <div class="flex items-center gap-4">
-                <div class="grid h-14 w-14 place-items-center rounded-2xl border border-[#5865F2]/30 bg-[#5865F2]/15 text-2xl text-[#9aa4ff]">
+                <div class="grid h-12 w-12 place-items-center rounded-xl border border-[#5865F2]/40 bg-[#5865F2]/15 text-2xl text-[#9aa4ff]">
                   <i class="fa-brands fa-discord"></i>
                 </div>
                 <div>
-                  <div id="discord-server-name" class="text-xl font-extrabold text-white">PHLRP Community</div>
-                  <div class="mt-1 flex items-center gap-2 text-sm text-slate-500">
+                  <div id="discord-server-name" class="text-xl font-bold text-white">PHLRP Community</div>
+                  <div class="mt-0.5 flex items-center gap-2 text-xs text-slate-400">
                     <span id="discord-live-dot" class="status-dot"></span>
-                    <span id="discord-widget-status">Connecting to Discord...</span>
+                    <span id="discord-widget-status" class="mono-font">Connecting to Discord...</span>
                   </div>
                 </div>
               </div>
@@ -630,51 +1095,51 @@
                  href="https://dsc.gg/philippine-roleplay"
                  target="_blank"
                  rel="noopener noreferrer"
-                 class="btn btn-primary !min-h-[44px] !px-4 !py-2">
+                 class="btn btn-primary !min-h-[42px] !px-4 !py-2">
                 <i class="fa-brands fa-discord"></i>
                 Join Discord
               </a>
             </div>
 
             <div class="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-3">
-              <div class="rounded-2xl border border-white/7 bg-black/20 p-4">
-                <div class="text-[10px] font-bold uppercase tracking-[.16em] text-slate-500">Online Now</div>
+              <div class="rounded-xl border border-white/[.08] bg-black/30 p-4">
+                <div class="mono-font text-[10px] font-bold uppercase tracking-[.16em] text-slate-400">Online Now</div>
                 <div id="discord-online-count" class="display-font mt-1 text-3xl font-bold text-sky-300">--</div>
               </div>
-              <div class="rounded-2xl border border-white/7 bg-black/20 p-4">
-                <div class="text-[10px] font-bold uppercase tracking-[.16em] text-slate-500">Members</div>
+              <div class="rounded-xl border border-white/[.08] bg-black/30 p-4">
+                <div class="mono-font text-[10px] font-bold uppercase tracking-[.16em] text-slate-400">Members</div>
                 <div id="discord-member-count" class="display-font mt-1 text-3xl font-bold text-white">--</div>
               </div>
-              <div class="col-span-2 rounded-2xl border border-white/7 bg-black/20 p-4 sm:col-span-1">
-                <div class="text-[10px] font-bold uppercase tracking-[.16em] text-slate-500">Voice Channels</div>
+              <div class="col-span-2 rounded-xl border border-white/[.08] bg-black/30 p-4 sm:col-span-1">
+                <div class="mono-font text-[10px] font-bold uppercase tracking-[.16em] text-slate-400">Voice Channels</div>
                 <div id="discord-voice-count" class="display-font mt-1 text-3xl font-bold text-white">--</div>
               </div>
             </div>
 
-            <div class="mt-7 flex items-center justify-between gap-4 border-b border-white/7 pb-3">
+            <div class="mt-7 flex items-center justify-between gap-4 border-b border-white/[.08] pb-3">
               <div>
-                <div class="text-xs font-extrabold uppercase tracking-[.16em] text-slate-300">Online Members</div>
-                <div class="mt-1 text-xs text-slate-600">Public Discord widget presence</div>
+                <div class="mono-font text-xs font-bold uppercase tracking-[.16em] text-slate-200">Online Members</div>
+                <div class="mt-0.5 text-xs text-slate-500">Public Discord widget presence</div>
               </div>
-              <button id="discord-refresh" type="button" class="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs font-bold text-slate-300 transition hover:border-sky-400/30 hover:text-white">
+              <button id="discord-refresh" type="button" class="rounded-lg border border-white/10 bg-white/5 px-2.5 py-1.5 text-xs font-semibold text-slate-300 transition hover:border-sky-400/30 hover:text-white" title="Refresh Discord status">
                 <i class="fa-solid fa-rotate-right mr-1"></i> Refresh
               </button>
             </div>
 
             <div id="discord-members" class="mt-4 grid gap-3 sm:grid-cols-2">
-              <div class="col-span-full rounded-2xl border border-dashed border-white/10 bg-white/[.02] p-5 text-sm leading-6 text-slate-500">
+              <div class="col-span-full rounded-xl border border-dashed border-white/10 bg-white/[.015] p-5 text-sm leading-relaxed text-slate-400">
                 Loading Discord presence...
               </div>
             </div>
 
-            <div id="discord-overflow" class="mt-4 hidden text-center text-xs font-semibold text-slate-500"></div>
+            <div id="discord-overflow" class="mt-4 hidden text-center text-xs font-semibold text-slate-400"></div>
           </div>
 
           <div class="glass reveal overflow-hidden rounded-3xl">
-            <div class="flex items-center justify-between border-b border-white/7 px-5 py-4">
+            <div class="flex items-center justify-between border-b border-white/[.08] px-5 py-4">
               <div>
-                <div class="text-sm font-extrabold text-white">PHLRP Discord</div>
-                <div class="mt-1 text-xs text-slate-500">Official Discord server widget</div>
+                <div class="text-sm font-bold text-white">PHLRP Discord</div>
+                <div class="mt-0.5 text-xs text-slate-400">Official Discord server widget</div>
               </div>
               <span class="tag">Live</span>
             </div>
@@ -682,10 +1147,9 @@
             <div id="discord-widget-frame-wrap" class="hidden bg-[#1e1f22]">
               <iframe
                 id="discord-widget-frame"
-                title="PHLRP Discord"
+                title="PHLRP Discord Server Live View"
                 width="100%"
                 height="500"
-                frameborder="0"
                 sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
                 loading="lazy"
                 class="block w-full bg-[#1e1f22]"></iframe>
@@ -693,12 +1157,12 @@
 
             <div id="discord-widget-setup" class="grid min-h-[500px] place-items-center p-8 text-center">
               <div class="max-w-md">
-                <div class="mx-auto grid h-16 w-16 place-items-center rounded-2xl border border-[#5865F2]/25 bg-[#5865F2]/10 text-2xl text-[#9aa4ff]">
+                <div class="mx-auto grid h-14 w-14 place-items-center rounded-2xl border border-[#5865F2]/30 bg-[#5865F2]/15 text-2xl text-[#9aa4ff]">
                   <i class="fa-brands fa-discord"></i>
                 </div>
-                <h3 class="mt-5 text-xl font-extrabold text-white">Connect the Discord widget</h3>
-                <p class="mt-3 text-sm leading-7 text-slate-500">
-                  Enable the Server Widget in Discord, then paste your Discord Server ID into <code class="rounded bg-black/30 px-1.5 py-1 text-sky-300">CONFIG.DISCORD_GUILD_ID</code>.
+                <h3 class="mt-4 text-xl font-bold text-white">Connect the Discord widget</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-400">
+                  Enable the Server Widget in Discord, then paste your Discord Server ID into <code class="mono-font rounded bg-black/40 px-1.5 py-0.5 text-sky-300 text-xs">CONFIG.DISCORD_GUILD_ID</code>.
                 </p>
               </div>
             </div>
@@ -707,128 +1171,175 @@
       </div>
     </section>
 
+    <!-- Anti-Cheat Section -->
     <section id="anticheat" class="py-24 md:py-32">
       <div class="container-shell grid gap-10 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
         <div class="reveal">
           <div class="section-kicker">PHLRP Security</div>
           <h2 class="section-title">Fair gameplay is the standard.</h2>
-          <p class="section-copy mt-5">Our Anti-Cheat Client is designed to add protection to the server while keeping the focus where it belongs: roleplay, progression, and legitimate gameplay.</p>
+          <p class="section-copy mt-4">Our Anti-Cheat Client is designed to add protection to the server while keeping the focus where it belongs: roleplay, progression, and legitimate gameplay.</p>
 
           <div class="mt-8 grid gap-3 sm:grid-cols-2">
-            <div class="flex gap-3 rounded-xl border border-white/7 bg-white/[.025] p-4"><i class="fa-solid fa-circle-check mt-1 text-sky-400"></i><div><div class="font-bold text-white">Client verification</div><div class="mt-1 text-sm leading-6 text-slate-500">Verify legitimate client sessions where required.</div></div></div>
-            <div class="flex gap-3 rounded-xl border border-white/7 bg-white/[.025] p-4"><i class="fa-solid fa-circle-check mt-1 text-sky-400"></i><div><div class="font-bold text-white">Ongoing improvements</div><div class="mt-1 text-sm leading-6 text-slate-500">Protection and stability continue to evolve.</div></div></div>
-            <div class="flex gap-3 rounded-xl border border-white/7 bg-white/[.025] p-4"><i class="fa-solid fa-circle-check mt-1 text-sky-400"></i><div><div class="font-bold text-white">Fair enforcement</div><div class="mt-1 text-sm leading-6 text-slate-500">Suspicious activity can be reviewed before action.</div></div></div>
-            <div class="flex gap-3 rounded-xl border border-white/7 bg-white/[.025] p-4"><i class="fa-solid fa-circle-check mt-1 text-sky-400"></i><div><div class="font-bold text-white">Automatic updates</div><div class="mt-1 text-sm leading-6 text-slate-500">Keep the launcher current without manual hunting.</div></div></div>
+            <div class="flex gap-3.5 rounded-xl border border-white/[.07] bg-white/[.02] p-4 transition hover:border-sky-400/30">
+              <i class="fa-solid fa-circle-check mt-1 text-sky-400"></i>
+              <div>
+                <div class="font-bold text-white text-sm">Client verification</div>
+                <div class="mt-0.5 text-xs leading-relaxed text-slate-400">Verify legitimate client sessions where required.</div>
+              </div>
+            </div>
+            <div class="flex gap-3.5 rounded-xl border border-white/[.07] bg-white/[.02] p-4 transition hover:border-sky-400/30">
+              <i class="fa-solid fa-circle-check mt-1 text-sky-400"></i>
+              <div>
+                <div class="font-bold text-white text-sm">Ongoing improvements</div>
+                <div class="mt-0.5 text-xs leading-relaxed text-slate-400">Protection and stability continue to evolve.</div>
+              </div>
+            </div>
+            <div class="flex gap-3.5 rounded-xl border border-white/[.07] bg-white/[.02] p-4 transition hover:border-sky-400/30">
+              <i class="fa-solid fa-circle-check mt-1 text-sky-400"></i>
+              <div>
+                <div class="font-bold text-white text-sm">Fair enforcement</div>
+                <div class="mt-0.5 text-xs leading-relaxed text-slate-400">Suspicious activity can be reviewed before action.</div>
+              </div>
+            </div>
+            <div class="flex gap-3.5 rounded-xl border border-white/[.07] bg-white/[.02] p-4 transition hover:border-sky-400/30">
+              <i class="fa-solid fa-circle-check mt-1 text-sky-400"></i>
+              <div>
+                <div class="font-bold text-white text-sm">Automatic updates</div>
+                <div class="mt-0.5 text-xs leading-relaxed text-slate-400">Keep the launcher current without manual hunting.</div>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="glass reveal relative overflow-hidden rounded-3xl p-8 md:p-10">
           <div class="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-sky-500/10 blur-3xl"></div>
           <div class="relative">
-            <div class="mx-auto grid h-24 w-24 place-items-center rounded-3xl border border-sky-400/25 bg-sky-400/10 shadow-[0_0_55px_rgba(32,164,255,.15)]">
-              <i class="fa-solid fa-shield-halved text-4xl text-sky-300"></i>
+            <div class="mx-auto grid h-20 w-20 place-items-center rounded-2xl border border-sky-400/30 bg-sky-400/10 shadow-[0_0_40px_rgba(32,164,255,.18)]">
+              <i class="fa-solid fa-shield-halved text-3xl text-sky-300"></i>
             </div>
-            <h3 class="display-font mt-7 text-center text-3xl font-bold text-white">PHLRP Anti-Cheat Client</h3>
-            <p class="mx-auto mt-3 max-w-md text-center text-sm leading-7 text-slate-400">Windows client for supported PC players. Download through the official PHLRP source only.</p>
+            <h3 class="display-font mt-6 text-center text-3xl font-bold text-white">PHLRP Anti-Cheat Client</h3>
+            <p class="mx-auto mt-2 max-w-md text-center text-sm leading-relaxed text-slate-300">Windows client for supported PC players. Download through the official PHLRP source only.</p>
 
             <button id="download-client" class="btn btn-primary mt-7 w-full" type="button">
               <i class="fa-brands fa-windows"></i>
-              Download Windows Client
+              <span>Download Windows Client</span>
             </button>
-            <p id="download-note" class="mt-3 text-center text-xs text-slate-500">Official download URL can be configured in the website settings.</p>
+            <p id="download-note" class="mt-3 text-center text-xs text-slate-400">Official download URL can be configured in the website settings.</p>
 
-            <div class="mt-7 border-t border-white/7 pt-6 text-xs leading-6 text-slate-500">
-              <strong class="text-slate-300">Important:</strong> This page intentionally does not advertise unsupported Linux or macOS clients. Only publish downloads you actively maintain.
+            <div class="mt-7 border-t border-white/[.08] pt-5 text-xs leading-relaxed text-slate-400">
+              <strong class="text-slate-200">Important:</strong> This page intentionally does not advertise unsupported Linux or macOS clients. Only publish downloads you actively maintain.
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="rules" class="border-y border-white/5 bg-white/[.015] py-24 md:py-32">
+    <!-- Rules Section -->
+    <section id="rules" class="border-y border-white/[.07] bg-white/[.015] py-24 md:py-32">
       <div class="container-shell">
         <div class="reveal max-w-3xl">
           <div class="section-kicker">Community Standards</div>
           <h2 class="section-title">Roleplay with respect.</h2>
-          <p class="section-copy mt-5">The website keeps the essentials easy to understand. Your full rules and enforcement details should remain available in Discord.</p>
+          <p class="section-copy mt-4">The website keeps the essentials easy to understand. Your full rules and enforcement details should remain available in Discord.</p>
         </div>
 
         <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          <article class="glass glass-hover reveal rounded-2xl p-6"><div class="rule-number">01</div><h3 class="mt-3 font-extrabold text-white">Respect the Community</h3><p class="mt-2 text-sm leading-7 text-slate-500">Treat players and staff respectfully. Harassment and toxic behavior have no place in the community.</p></article>
-          <article class="glass glass-hover reveal rounded-2xl p-6"><div class="rule-number">02</div><h3 class="mt-3 font-extrabold text-white">Roleplay Properly</h3><p class="mt-2 text-sm leading-7 text-slate-500">Avoid random deathmatch, vehicle deathmatch, metagaming, and other behavior that breaks roleplay standards.</p></article>
-          <article class="glass glass-hover reveal rounded-2xl p-6"><div class="rule-number">03</div><h3 class="mt-3 font-extrabold text-white">Play Legit</h3><p class="mt-2 text-sm leading-7 text-slate-500">Cheats, exploits, macros, and unauthorized advantages that affect gameplay are prohibited.</p></article>
-          <article class="glass glass-hover reveal rounded-2xl p-6"><div class="rule-number">04</div><h3 class="mt-3 font-extrabold text-white">Protect the Economy</h3><p class="mt-2 text-sm leading-7 text-slate-500">Do not abuse jobs, bugs, or systems for illegitimate money, rewards, items, or progression.</p></article>
+          <article class="glass glass-hover reveal rounded-2xl p-6">
+            <div class="rule-number">01</div>
+            <h3 class="mt-3 font-bold text-white">Respect the Community</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-400">Treat players and staff respectfully. Harassment and toxic behavior have no place in the community.</p>
+          </article>
+          <article class="glass glass-hover reveal rounded-2xl p-6">
+            <div class="rule-number">02</div>
+            <h3 class="mt-3 font-bold text-white">Roleplay Properly</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-400">Avoid random deathmatch, vehicle deathmatch, metagaming, and other behavior that breaks roleplay standards.</p>
+          </article>
+          <article class="glass glass-hover reveal rounded-2xl p-6">
+            <div class="rule-number">03</div>
+            <h3 class="mt-3 font-bold text-white">Play Legit</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-400">Cheats, exploits, macros, and unauthorized advantages that affect gameplay are prohibited.</p>
+          </article>
+          <article class="glass glass-hover reveal rounded-2xl p-6">
+            <div class="rule-number">04</div>
+            <h3 class="mt-3 font-bold text-white">Protect the Economy</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-400">Do not abuse jobs, bugs, or systems for illegitimate money, rewards, items, or progression.</p>
+          </article>
         </div>
 
-        <div class="mt-8 reveal"><a href="https://dsc.gg/philippine-roleplay" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fa-brands fa-discord text-[#8d9cff]"></i> Read Full Rules on Discord</a></div>
+        <div class="mt-8 reveal"><a href="https://dsc.gg/philippine-roleplay" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fa-brands fa-discord text-[#7a8cff]"></i> Read Full Rules on Discord</a></div>
       </div>
     </section>
 
+    <!-- Support / VIP Packages -->
     <section id="support" class="py-24 md:py-32">
       <div class="container-shell">
         <div class="reveal text-center">
           <div class="section-kicker justify-center before:hidden">Support PHLRP</div>
           <h2 class="section-title mx-auto">Support the server's growth.</h2>
-          <p class="section-copy mx-auto mt-5">Donations help fund hosting, development, maintenance, and future improvements. In-game perks should support the experience without replacing fair progression.</p>
+          <p class="section-copy mx-auto mt-4">Donations help fund hosting, development, maintenance, and future improvements. In-game perks should support the experience without replacing fair progression.</p>
         </div>
 
-        <div class="mx-auto mt-12 grid max-w-5xl gap-5 md:grid-cols-3">
+        <div class="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-3">
           <article class="donation-card glass glass-hover reveal rounded-2xl p-7">
             <span class="tag">Entry</span>
-            <h3 class="mt-5 text-xl font-extrabold text-white">Gold VIP</h3>
-            <div class="price mt-5">₱249</div>
-            <div class="mt-1 text-xs font-semibold uppercase tracking-[.15em] text-slate-500">1 Month</div>
-            <ul class="mt-6 space-y-3 text-sm text-slate-400">
-              <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-sky-400"></i><span>Gold VIP status</span></li>
-              <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-sky-400"></i><span>Access to applicable VIP benefits</span></li>
-              <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-sky-400"></i><span>Supports continued server development</span></li>
+            <h3 class="mt-4 text-xl font-bold text-white">Gold VIP</h3>
+            <div class="price mt-4">₱249</div>
+            <div class="mono-font mt-1 text-xs font-semibold uppercase tracking-[.15em] text-slate-400">1 Month Access</div>
+            <ul class="mt-6 space-y-3 text-sm text-slate-300">
+              <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-sky-400 text-xs"></i><span>Gold VIP status</span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-sky-400 text-xs"></i><span>Access to applicable VIP benefits</span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-sky-400 text-xs"></i><span>Supports continued server development</span></li>
             </ul>
           </article>
 
           <article class="donation-card featured glass glass-hover reveal rounded-2xl p-7">
-            <div class="flex items-center justify-between gap-3"><span class="tag">Popular</span><span class="text-xs font-bold text-sky-300">Starter</span></div>
-            <h3 class="mt-5 text-xl font-extrabold text-white">Starter Pack</h3>
-            <div class="price mt-5">₱399</div>
-            <div class="mt-1 text-xs font-semibold uppercase tracking-[.15em] text-slate-500">One-time Pack</div>
-            <ul class="mt-6 space-y-3 text-sm text-slate-400">
-              <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-sky-400"></i><span>1 Month Gold VIP</span></li>
-              <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-sky-400"></i><span>1 Rare vehicle of your choice</span></li>
-              <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-sky-400"></i><span>50 Cookies + 1 Giftbox</span></li>
+            <div class="flex items-center justify-between gap-3">
+              <span class="tag !border-sky-400/50 !bg-sky-400/20 !text-white">Popular</span>
+              <span class="mono-font text-xs font-bold uppercase tracking-wider text-sky-300">Starter Tier</span>
+            </div>
+            <h3 class="mt-4 text-xl font-bold text-white">Starter Pack</h3>
+            <div class="price mt-4">₱399</div>
+            <div class="mono-font mt-1 text-xs font-semibold uppercase tracking-[.15em] text-slate-400">One-time Pack</div>
+            <ul class="mt-6 space-y-3 text-sm text-slate-200">
+              <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-sky-400 text-xs"></i><span>1 Month Gold VIP</span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-sky-400 text-xs"></i><span>1 Rare vehicle of your choice</span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-sky-400 text-xs"></i><span>50 Cookies + 1 Giftbox</span></li>
             </ul>
           </article>
 
           <article class="donation-card glass glass-hover reveal rounded-2xl p-7">
             <span class="tag">Premium</span>
-            <h3 class="mt-5 text-xl font-extrabold text-white">Package 5</h3>
-            <div class="price mt-5">₱999</div>
-            <div class="mt-1 text-xs font-semibold uppercase tracking-[.15em] text-slate-500">Ultimate Pack</div>
-            <ul class="mt-6 space-y-3 text-sm text-slate-400">
-              <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-sky-400"></i><span>2 Months Gold VIP</span></li>
-              <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-sky-400"></i><span>3 Legendary vehicles</span></li>
-              <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-sky-400"></i><span>50 Cookies + 10 Giftboxes</span></li>
+            <h3 class="mt-4 text-xl font-bold text-white">Package 5</h3>
+            <div class="price mt-4">₱999</div>
+            <div class="mono-font mt-1 text-xs font-semibold uppercase tracking-[.15em] text-slate-400">Ultimate Tier</div>
+            <ul class="mt-6 space-y-3 text-sm text-slate-300">
+              <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-sky-400 text-xs"></i><span>2 Months Gold VIP</span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-sky-400 text-xs"></i><span>3 Legendary vehicles</span></li>
+              <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-sky-400 text-xs"></i><span>50 Cookies + 10 Giftboxes</span></li>
             </ul>
           </article>
         </div>
 
-        <div class="mt-8 flex flex-col items-center justify-center gap-3 text-center reveal">
+        <div class="mt-9 flex flex-col items-center justify-center gap-2.5 text-center reveal">
           <a href="https://dsc.gg/philippine-roleplay" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fa-brands fa-discord"></i> View All Packages / Donate</a>
           <p class="text-xs text-slate-500">Donation availability, benefits, and package terms are subject to the server's current Discord announcement.</p>
         </div>
       </div>
     </section>
 
+    <!-- Bottom Banner CTA -->
     <section class="pb-24 md:pb-32">
       <div class="container-shell">
         <div class="glass reveal relative overflow-hidden rounded-3xl px-6 py-12 text-center md:px-12 md:py-16">
           <div class="absolute -left-20 top-0 h-64 w-64 rounded-full bg-sky-500/10 blur-3xl"></div>
           <div class="absolute -right-20 bottom-0 h-64 w-64 rounded-full bg-red-500/10 blur-3xl"></div>
           <div class="relative">
-            <div class="text-xs font-black uppercase tracking-[.28em] text-sky-300">Your story starts here</div>
-            <h2 class="display-font mx-auto mt-4 max-w-4xl text-4xl font-bold leading-none text-white md:text-6xl">Looking for a server you can stay on?</h2>
-            <p class="mx-auto mt-5 max-w-2xl leading-8 text-slate-400">Frequent updates. Fewer disruptive bugs. Anti-cheat protection. A community built for the long run.</p>
+            <div class="mono-font text-xs font-bold uppercase tracking-[.25em] text-sky-300">Your story starts here</div>
+            <h2 class="display-font mx-auto mt-3 max-w-4xl text-3xl font-bold leading-tight text-white md:text-5xl">Looking for a server you can stay on?</h2>
+            <p class="mx-auto mt-4 max-w-2xl leading-relaxed text-slate-300">Frequent updates. Fewer disruptive bugs. Anti-cheat protection. A community built for the long run.</p>
             <div class="mt-8 flex flex-wrap justify-center gap-3">
-              <a href="samp://samp.ph-rp.info:7777" class="btn btn-primary"><i class="fa-solid fa-play"></i> Connect to PHLRP</a>
-              <a href="https://dsc.gg/philippine-roleplay" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fa-brands fa-discord text-[#8d9cff]"></i> Join Discord</a>
+              <a href="samp://samp.ph-rp.info:7777" class="btn btn-primary"><i class="fa-solid fa-play text-xs"></i> Connect to PHLRP</a>
+              <a href="https://dsc.gg/philippine-roleplay" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fa-brands fa-discord text-[#7a8cff]"></i> Join Discord</a>
             </div>
           </div>
         </div>
@@ -836,105 +1347,313 @@
     </section>
   </main>
 
-  <footer class="border-t border-white/5 bg-black/20 py-10">
-    <div class="container-shell flex flex-col gap-7 md:flex-row md:items-center md:justify-between">
+  <!-- Corporate Footer -->
+  <footer class="border-t border-white/[.08] bg-[#02050e] py-12">
+    <div class="container-shell flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
       <div>
-        <div class="display-font text-xl font-bold tracking-[.16em] text-white">PHLRP ROLEPLAY</div>
-        <p class="mt-2 text-sm text-slate-500">Same City. Bigger Stories.</p>
+        <div class="display-font text-xl font-bold tracking-[.18em] text-white">PHLRP ROLEPLAY</div>
+        <p class="mt-1 text-xs text-slate-400">Same City. Bigger Stories. Operated by PHLRP Network.</p>
       </div>
-      <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-slate-500">
-        <a href="#features" class="hover:text-white">Features</a>
-        <a href="#updates" class="hover:text-white">Updates</a>
-        <a href="#community" class="hover:text-white">Community</a>
-        <a href="#anticheat" class="hover:text-white">Anti-Cheat</a>
-        <a href="#rules" class="hover:text-white">Rules</a>
-        <a href="#support" class="hover:text-white">Support</a>
+      <div class="flex flex-wrap gap-x-7 gap-y-3 text-sm font-medium text-slate-400">
+        <a href="#features" class="transition-colors hover:text-white">Features</a>
+        <a href="#updates" class="transition-colors hover:text-white">Updates</a>
+        <a href="#community" class="transition-colors hover:text-white">Community</a>
+        <a href="#anticheat" class="transition-colors hover:text-white">Anti-Cheat</a>
+        <a href="#rules" class="transition-colors hover:text-white">Rules</a>
+        <a href="#support" class="transition-colors hover:text-white">Support</a>
       </div>
-      <div class="text-sm text-slate-500 md:text-right">
-        <div>Server: <button id="footer-copy-ip" type="button" class="font-bold text-slate-300 hover:text-sky-300">samp.ph-rp.info:7777</button></div>
-        <div class="mt-1">© <span id="year"></span> PHLRP. All rights reserved.</div>
+      <div class="text-xs text-slate-400 md:text-right">
+        <div>Server: <button id="footer-copy-ip" type="button" class="mono-font font-semibold text-slate-200 transition-colors hover:text-sky-300" title="Click to copy IP">samp.ph-rp.info:7777</button></div>
+        <div class="mt-1 text-slate-500">© <span id="year"></span> PHLRP. All rights reserved. Not affiliated with Rockstar Games or Take-Two.</div>
       </div>
     </div>
   </footer>
 
-<script>
-document.addEventListener("contextmenu", e => e.preventDefault());
+  <script>
+    // Developer Safety Lock
+    document.addEventListener("contextmenu", e => e.preventDefault());
 
-document.addEventListener("keydown", e => {
-    if (
+    document.addEventListener("keydown", e => {
+      if (
         e.key === "F12" ||
         (e.ctrlKey && e.key.toLowerCase() === "u") ||
         (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(e.key.toLowerCase()))
-    ) {
+      ) {
         e.preventDefault();
         return false;
-    }
-});
-</script>
+      }
+    });
+  </script>
 
   <script>
-    // =========================
-    // PHLRP WEBSITE SETTINGS
-    // =========================
+    // ============================================
+    // PHLRP WEBSITE & GOOGLE AUTH CONFIGURATION
+    // ============================================
     const CONFIG = {
       SERVER_IP: 'samp.ph-rp.info',
       SERVER_PORT: 7777,
-
-      // Add a real HTTP/HTTPS endpoint here if you have one.
-      // Expected JSON example:
-      // { "online": true, "players": 18, "maxPlayers": 100 }
-      // Do NOT use the SA-MP UDP query port directly in browser fetch().
       STATUS_API: 'https://phlrp-status-api.vercel.app/api/status',
-
-      // Discord live widget.
-      // 1) Discord > Server Settings > Widget > Enable Server Widget
-      // 2) Right-click your server icon > Copy Server ID (Developer Mode must be enabled)
-      // 3) Paste the ID below. No bot token is needed.
       DISCORD_GUILD_ID: '1108753503830167632',
       DISCORD_INVITE_URL: 'https://dsc.gg/philippine-roleplay',
-      // Optional: paste a normal discord.gg invite CODE only (example: AbCd1234)
-      // to show the approximate total member count.
       DISCORD_INVITE_CODE: 'AQKpUJryCZ',
       DISCORD_REFRESH_MS: 60000,
-
-      // Replace with your official Windows client URL (GitHub Release, CDN, etc.).
       CLIENT_DOWNLOAD_URL: 'https://raw.githubusercontent.com/diamondzya/bAnticheat-phlrp/main/PHLRP%20Client.zip',
-
       STATUS_REFRESH_MS: 30000,
+
+      // Your actual Google Client ID:
+      GOOGLE_CLIENT_ID: '376624386915-uq4doua2rbrki8fjsg5rkd9u1vvgglba.apps.googleusercontent.com'
     };
 
     const SERVER_ADDRESS = `${CONFIG.SERVER_IP}:${CONFIG.SERVER_PORT}`;
     const toast = document.getElementById('toast');
+    const toastText = document.getElementById('toast-text');
     let toastTimer;
 
     function showToast(message) {
-      toast.textContent = message;
+      toastText.textContent = message;
       toast.classList.add('show');
       clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 2800);
     }
 
-    async function copyServerIP() {
+    // ============================================
+    // GOOGLE OAUTH & PROFILE STATE ENGINE
+    // ============================================
+    const authModal = document.getElementById('auth-modal');
+    const userMenu = document.getElementById('user-menu');
+    const navLoginBtn = document.getElementById('nav-login-btn');
+    const mobileLoginBtn = document.getElementById('mobile-login-btn');
+    const mobileAuthStatus = document.getElementById('mobile-auth-status');
+    const charHandleInput = document.getElementById('char-handle-input');
+
+    // Decode Google JWT ID Token payload (Standard Base64URL decoder)
+    function parseJwt(token) {
+      try {
+        const base64Url = token.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const jsonPayload = decodeURIComponent(atob(base64).split('').map(c => {
+          return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+        return JSON.parse(jsonPayload);
+      } catch (err) {
+        console.error('Failed to parse Google JWT credential:', err);
+        return null;
+      }
+    }
+
+    // Open & Close Auth Modal
+    function openAuthModal() {
+      authModal.classList.remove('hidden');
+      authModal.classList.add('flex');
+    }
+
+    function closeAuthModal() {
+      authModal.classList.add('hidden');
+      authModal.classList.remove('flex');
+    }
+
+    document.getElementById('close-auth-modal').addEventListener('click', closeAuthModal);
+    navLoginBtn.addEventListener('click', () => {
+      const user = getSavedUser();
+      if (user) {
+        userMenu.classList.toggle('hidden');
+      } else {
+        openAuthModal();
+      }
+    });
+    if (mobileLoginBtn) mobileLoginBtn.addEventListener('click', openAuthModal);
+
+    // Save and retrieve session
+    function getSavedUser() {
+      try {
+        return JSON.parse(localStorage.getItem('phlrp_auth_user'));
+      } catch {
+        return null;
+      }
+    }
+
+    function saveUserSession(userData) {
+      localStorage.setItem('phlrp_auth_user', JSON.stringify(userData));
+      renderUserAuth();
+      closeAuthModal();
+      showToast(`Signed in as ${userData.name} (${userData.email})`);
+    }
+
+    function logoutUser() {
+      localStorage.removeItem('phlrp_auth_user');
+      userMenu.classList.add('hidden');
+      renderUserAuth();
+      showToast('You have been signed out.');
+    }
+
+    document.getElementById('nav-logout-btn').addEventListener('click', logoutUser);
+    document.getElementById('mobile-logout-btn').addEventListener('click', logoutUser);
+
+    // Update UI based on logged-in state
+    function renderUserAuth() {
+      const user = getSavedUser();
+
+      if (user) {
+        // Desktop Navbar state
+        navLoginBtn.innerHTML = `
+          <img src="${user.picture}" alt="" class="h-5 w-5 rounded-full object-cover ring-1 ring-white/30" />
+          <span class="max-w-[90px] truncate text-xs">${user.given_name || user.name}</span>
+          <i class="fa-solid fa-chevron-down text-[10px] text-sky-300"></i>
+        `;
+        navLoginBtn.title = `Signed in as ${user.email}`;
+
+        // Fill desktop dropdown
+        document.getElementById('user-avatar').src = user.picture;
+        document.getElementById('user-name').textContent = user.name;
+        document.getElementById('user-email').textContent = user.email;
+        document.getElementById('user-sub-id').textContent = user.sub || 'G-ACC-' + Math.floor(100000 + Math.random() * 900000);
+
+        // Mobile state
+        mobileAuthStatus.classList.remove('hidden');
+        document.getElementById('mobile-user-avatar').src = user.picture;
+        document.getElementById('mobile-user-name').textContent = user.name;
+        document.getElementById('mobile-user-email').textContent = user.email;
+        if (mobileLoginBtn) mobileLoginBtn.classList.add('hidden');
+
+        // Character Name Persistence
+        const savedChar = localStorage.getItem('phlrp_char_name') || '';
+        charHandleInput.value = savedChar;
+      } else {
+        // Logged out
+        navLoginBtn.innerHTML = `<i class="fa-brands fa-google text-xs"></i> <span>Sign In</span>`;
+        navLoginBtn.title = "Sign in with Google";
+        mobileAuthStatus.classList.add('hidden');
+        if (mobileLoginBtn) mobileLoginBtn.classList.remove('hidden');
+      }
+    }
+
+    // Character Handle update listener
+    charHandleInput.addEventListener('change', (e) => {
+      localStorage.setItem('phlrp_char_name', e.target.value.trim());
+      showToast('Character handle updated.');
+    });
+
+    // Google Identity Services Credential Handler
+    window.handleGoogleCredentialResponse = function(response) {
+      if (!response.credential) return;
+      const profile = parseJwt(response.credential);
+      if (profile) {
+        saveUserSession({
+          name: profile.name,
+          given_name: profile.given_name,
+          email: profile.email,
+          picture: profile.picture,
+          sub: profile.sub
+        });
+      }
+    };
+
+    // Initialize Google Identity Services
+    function initializeGoogleAuth() {
+      if (window.google && google.accounts && google.accounts.id) {
+        try {
+          google.accounts.id.initialize({
+            client_id: CONFIG.GOOGLE_CLIENT_ID,
+            callback: handleGoogleCredentialResponse,
+            auto_select: false
+          });
+
+          // Render the official Google Sign-In Button inside our modal
+          google.accounts.id.renderButton(
+            document.getElementById('g_id_signin_container'),
+            { 
+              theme: 'filled_black', 
+              size: 'large', 
+              shape: 'rectangular', 
+              logo_alignment: 'left',
+              width: 280
+            }
+          );
+        } catch (e) {
+          console.warn('[Google Auth] Could not render GIS button (check GOOGLE_CLIENT_ID):', e);
+        }
+      }
+    }
+
+    // Quick Simulation Login for local tests without OAuth setup
+    document.getElementById('sim-google-login').addEventListener('click', () => {
+      saveUserSession({
+        name: 'Demo Roleplayer',
+        given_name: 'Demo',
+        email: 'player@gmail.com',
+        picture: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=120&h=120&q=80',
+        sub: '109283748291029384729'
+      });
+    });
+
+    // Close user dropdown if clicked outside
+    document.addEventListener('click', (e) => {
+      if (!document.getElementById('nav-auth-container').contains(e.target)) {
+        userMenu.classList.add('hidden');
+      }
+      if (e.target === authModal) {
+        closeAuthModal();
+      }
+    });
+
+    // Copy Server IP functionality
+    async function copyServerIP(triggerElement) {
+      let success = false;
       try {
         await navigator.clipboard.writeText(SERVER_ADDRESS);
-        showToast(`Server IP copied: ${SERVER_ADDRESS}`);
+        success = true;
       } catch {
         const input = document.createElement('textarea');
         input.value = SERVER_ADDRESS;
+        input.style.position = 'fixed';
+        input.style.opacity = '0';
         document.body.appendChild(input);
         input.select();
-        document.execCommand('copy');
+        success = document.execCommand('copy');
         input.remove();
+      }
+
+      if (success) {
         showToast(`Server IP copied: ${SERVER_ADDRESS}`);
+        if (triggerElement) {
+          const originalHTML = triggerElement.innerHTML;
+          triggerElement.innerHTML = `<i class="fa-solid fa-check text-emerald-400"></i> <span class="text-emerald-300 font-bold">Copied!</span>`;
+          setTimeout(() => {
+            triggerElement.innerHTML = originalHTML;
+          }, 2000);
+        }
+      } else {
+        showToast(`Could not copy automatically. Address: ${SERVER_ADDRESS}`);
       }
     }
 
     ['nav-copy-ip', 'mobile-copy-ip', 'hero-copy-ip', 'footer-copy-ip'].forEach(id => {
       const el = document.getElementById(id);
-      if (el) el.addEventListener('click', copyServerIP);
+      if (el) el.addEventListener('click', (e) => copyServerIP(e.currentTarget));
     });
 
-    // Mobile navigation
+    // Keyboard Shortcuts (C = Copy IP, P = Play Now, Escape = Close Menus/Modals)
+    document.addEventListener('keydown', (e) => {
+      if (['input', 'textarea'].includes(document.activeElement.tagName.toLowerCase())) return;
+      if (e.key.toLowerCase() === 'c' && !e.ctrlKey && !e.metaKey) {
+        copyServerIP(document.getElementById('nav-copy-ip'));
+      } else if (e.key.toLowerCase() === 'p' && !e.ctrlKey && !e.metaKey) {
+        const playBtn = document.getElementById('play-now');
+        if (playBtn) playBtn.click();
+      } else if (e.key === 'Escape') {
+        closeAuthModal();
+        userMenu.classList.add('hidden');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+          mobileBtn.setAttribute('aria-expanded', 'false');
+          mobileBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        }
+      }
+    });
+
+    // Mobile Navigation
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     mobileBtn.addEventListener('click', () => {
@@ -948,7 +1667,49 @@ document.addEventListener("keydown", e => {
       mobileBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
     }));
 
-    // Discord live community
+    // Back to Top Scroll Behavior
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 420) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }, { passive: true });
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Network Connectivity State
+    window.addEventListener('offline', () => showToast('Network disconnected. Live status paused.'));
+    window.addEventListener('online', () => {
+      showToast('Back online! Syncing server data...');
+      updateServerStatus();
+      loadDiscordWidget();
+    });
+
+    // Features Section Filter
+    const filterButtons = document.querySelectorAll('.filter-pill');
+    const featureCards = document.querySelectorAll('#features-grid .feature-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+
+        featureCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'block';
+            card.classList.add('visible');
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Discord Live Community
     const discordEls = {
       serverName: document.getElementById('discord-server-name'),
       status: document.getElementById('discord-widget-status'),
@@ -979,7 +1740,7 @@ document.addEventListener("keydown", e => {
 
       if (!visible.length) {
         discordEls.members.innerHTML = `
-          <div class="col-span-full rounded-2xl border border-dashed border-white/10 bg-white/[.02] p-5 text-sm leading-6 text-slate-500">
+          <div class="col-span-full rounded-xl border border-dashed border-white/10 bg-white/[.015] p-5 text-sm leading-relaxed text-slate-400">
             No public online members are being returned by the Discord widget right now.
           </div>`;
         discordEls.overflow.classList.add('hidden');
@@ -988,28 +1749,28 @@ document.addEventListener("keydown", e => {
 
       visible.forEach(member => {
         const card = document.createElement('div');
-        card.className = 'flex min-w-0 items-center gap-3 rounded-2xl border border-white/7 bg-white/[.025] p-3';
+        card.className = 'flex min-w-0 items-center gap-3 rounded-xl border border-white/[.08] bg-white/[.02] p-2.5 transition hover:border-sky-400/30 hover:bg-white/[.04]';
 
         const avatar = document.createElement('img');
         avatar.src = member.avatar_url || 'https://cdn.discordapp.com/embed/avatars/0.png';
-        avatar.alt = '';
+        avatar.alt = `${member.username || 'Member'}'s avatar`;
         avatar.loading = 'lazy';
         avatar.referrerPolicy = 'no-referrer';
-        avatar.className = 'h-10 w-10 shrink-0 rounded-full bg-white/5 object-cover';
+        avatar.className = 'h-9 w-9 shrink-0 rounded-full bg-white/5 object-cover ring-1 ring-white/10';
 
         const info = document.createElement('div');
         info.className = 'min-w-0 flex-1';
 
         const name = document.createElement('div');
-        name.className = 'truncate text-sm font-bold text-slate-200';
+        name.className = 'truncate text-xs font-bold text-slate-200';
         name.textContent = member.username || 'Discord Member';
 
         const activity = document.createElement('div');
-        activity.className = 'mt-1 truncate text-xs text-slate-500';
+        activity.className = 'mt-0.5 truncate text-[11px] text-slate-400';
         activity.textContent = member.game?.name ? `Playing ${member.game.name}` : 'Online';
 
         const presence = document.createElement('span');
-        presence.className = 'h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,.55)]';
+        presence.className = 'h-2 w-2 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(44,208,126,.6)]';
         presence.title = member.status || 'online';
 
         info.append(name, activity);
@@ -1038,11 +1799,12 @@ document.addEventListener("keydown", e => {
         });
         if (!response.ok) throw new Error(`Invite API ${response.status}`);
         const data = await response.json();
-        discordEls.membersTotal.textContent =
-          Number.isFinite(data.approximate_member_count) ? data.approximate_member_count.toLocaleString() : '--';
+        const total = Number.isFinite(data.approximate_member_count) ? data.approximate_member_count.toLocaleString() : '--';
+        discordEls.membersTotal.textContent = total;
+        localStorage.setItem('phlrp_discord_total', total);
       } catch (error) {
         console.warn('[Discord] Could not load total member count:', error);
-        discordEls.membersTotal.textContent = '--';
+        discordEls.membersTotal.textContent = localStorage.getItem('phlrp_discord_total') || '--';
       }
     }
 
@@ -1060,8 +1822,8 @@ document.addEventListener("keydown", e => {
         discordEls.frameWrap.classList.add('hidden');
         discordEls.setup.classList.remove('hidden');
         discordEls.members.innerHTML = `
-          <div class="col-span-full rounded-2xl border border-dashed border-sky-400/15 bg-sky-400/[.03] p-5 text-sm leading-6 text-slate-500">
-            Add your Discord Server ID to <span class="font-semibold text-sky-300">CONFIG.DISCORD_GUILD_ID</span> to display live online members.
+          <div class="col-span-full rounded-xl border border-dashed border-sky-400/20 bg-sky-400/[.03] p-5 text-sm leading-relaxed text-slate-400">
+            Add your Discord Server ID to <span class="mono-font font-semibold text-sky-300">CONFIG.DISCORD_GUILD_ID</span> to display live online members.
           </div>`;
         return;
       }
@@ -1079,8 +1841,12 @@ document.addEventListener("keydown", e => {
         const data = await response.json();
 
         discordEls.serverName.textContent = data.name || 'PHLRP Community';
-        discordEls.online.textContent = Number(data.presence_count ?? data.members?.length ?? 0).toLocaleString();
+        const onlineFormatted = Number(data.presence_count ?? data.members?.length ?? 0).toLocaleString();
+        discordEls.online.textContent = onlineFormatted;
         discordEls.voice.textContent = Array.isArray(data.channels) ? data.channels.length.toLocaleString() : '0';
+        
+        localStorage.setItem('phlrp_discord_online', onlineFormatted);
+
         if (data.instant_invite && !CONFIG.DISCORD_INVITE_URL) {
           discordEls.join.href = data.instant_invite;
         }
@@ -1090,11 +1856,11 @@ document.addEventListener("keydown", e => {
       } catch (error) {
         console.warn('[Discord] Widget API unavailable:', error);
         setDiscordConnectionState(false, 'Widget data unavailable');
-        discordEls.online.textContent = '--';
+        discordEls.online.textContent = localStorage.getItem('phlrp_discord_online') || '--';
         discordEls.voice.textContent = '--';
         discordEls.members.innerHTML = `
-          <div class="col-span-full rounded-2xl border border-red-400/10 bg-red-400/[.025] p-5 text-sm leading-6 text-slate-500">
-            Discord did not return public widget data. Make sure <span class="font-semibold text-slate-300">Server Settings → Widget → Enable Server Widget</span> is turned on and the Server ID is correct.
+          <div class="col-span-full rounded-xl border border-red-400/10 bg-red-400/[.02] p-5 text-sm leading-relaxed text-slate-400">
+            Discord did not return public widget data. Ensure <span class="font-semibold text-slate-300">Server Settings → Widget → Enable Server Widget</span> is turned on.
           </div>`;
       }
 
@@ -1106,18 +1872,27 @@ document.addEventListener("keydown", e => {
       showToast('Refreshing Discord community data...');
     });
 
-    loadDiscordWidget();
-    setInterval(loadDiscordWidget, CONFIG.DISCORD_REFRESH_MS);
+    // Anti-Cheat Client Smart Download with OS Check
+    const clientBtn = document.getElementById('download-client');
+    const isWindows = /Win/i.test(navigator.userAgent || navigator.userAgentData?.platform || '');
+    
+    if (!isWindows) {
+      const note = document.getElementById('download-note');
+      if (note) {
+        note.innerHTML = `<span class="text-amber-400 font-semibold"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Windows binary detected:</span> Wine or Proton compatibility layer required on your OS.`;
+      }
+    }
 
-    // Anti-cheat download
-    document.getElementById('download-client').addEventListener('click', () => {
+    clientBtn.addEventListener('click', () => {
       if (!CONFIG.CLIENT_DOWNLOAD_URL) {
         showToast('Client download link is not configured yet. Set CONFIG.CLIENT_DOWNLOAD_URL.');
         return;
       }
+      showToast('Starting Windows anti-cheat download...');
       window.open(CONFIG.CLIENT_DOWNLOAD_URL, '_blank', 'noopener,noreferrer');
     });
 
+    // Server Status Monitor with Cache Resilience
     function renderStatus({ online = null, players = null, maxPlayers = null } = {}) {
       const dot = document.getElementById('hero-status-dot');
       const label = document.getElementById('hero-status-label');
@@ -1129,7 +1904,7 @@ document.addEventListener("keydown", e => {
       if (online === true) {
         dot.classList.add('online');
         label.textContent = 'Server Online';
-        metricStatus.textContent = 'Online';
+        metricStatus.textContent = 'Operational';
         metricStatus.className = 'mt-1 font-bold text-emerald-300';
       } else if (online === false) {
         dot.classList.add('offline');
@@ -1160,18 +1935,28 @@ document.addEventListener("keydown", e => {
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const data = await response.json();
 
-        renderStatus({
+        const statusPayload = {
           online: typeof data.online === 'boolean' ? data.online : null,
           players: Number.isFinite(Number(data.players ?? data.player_count)) ? Number(data.players ?? data.player_count) : null,
           maxPlayers: Number.isFinite(Number(data.maxPlayers ?? data.max_players)) ? Number(data.maxPlayers ?? data.max_players) : null,
-        });
+        };
+
+        localStorage.setItem('phlrp_last_status', JSON.stringify(statusPayload));
+        renderStatus(statusPayload);
       } catch (error) {
         console.warn('Server status API unavailable:', error);
+        const cached = localStorage.getItem('phlrp_last_status');
+        if (cached) {
+          try {
+            renderStatus(JSON.parse(cached));
+            return;
+          } catch {}
+        }
         renderStatus();
       }
     }
 
-    // Reveal animation
+    // Scroll Reveal Observer
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1182,7 +1967,7 @@ document.addEventListener("keydown", e => {
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    // Active navigation section
+    // Active Navigation Section Spy
     const sections = [...document.querySelectorAll('main section[id]')];
     const navLinks = [...document.querySelectorAll('.nav-link')];
     const sectionObserver = new IntersectionObserver(entries => {
@@ -1195,9 +1980,22 @@ document.addEventListener("keydown", e => {
     }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
     sections.forEach(section => sectionObserver.observe(section));
 
+    // Initialize Page & Google Identity Services
     document.getElementById('year').textContent = new Date().getFullYear();
+    renderUserAuth();
     updateServerStatus();
+    loadDiscordWidget();
+
+    // Check GIS library load interval
+    const gisCheckInterval = setInterval(() => {
+      if (window.google && google.accounts) {
+        clearInterval(gisCheckInterval);
+        initializeGoogleAuth();
+      }
+    }, 100);
+
     setInterval(updateServerStatus, CONFIG.STATUS_REFRESH_MS);
+    setInterval(loadDiscordWidget, CONFIG.DISCORD_REFRESH_MS);
   </script>
 </body>
 </html>
